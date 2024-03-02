@@ -16,15 +16,19 @@
  */
 package com.jwebmp.core.services;
 
-import com.guicedee.guicedinjection.interfaces.*;
-import com.jwebmp.core.base.ajax.*;
-import com.jwebmp.core.base.client.*;
-import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.guicedee.guicedinjection.interfaces.IDefaultService;
+import com.jwebmp.core.base.ajax.AjaxCall;
+import com.jwebmp.core.base.ajax.AjaxResponse;
+import com.jwebmp.core.base.client.Browsers;
+import com.jwebmp.core.base.client.HTMLVersions;
 import com.jwebmp.core.base.html.attributes.NoAttributes;
-import com.jwebmp.core.base.html.interfaces.AttributeDefinitions;
-import com.jwebmp.core.base.interfaces.*;
-import com.jwebmp.core.base.servlets.enumarations.*;
-import jakarta.validation.constraints.*;
+import com.jwebmp.core.base.html.interfaces.children.BodyChildren;
+import com.jwebmp.core.base.interfaces.IComponentHTMLAttributeBase;
+import com.jwebmp.core.base.interfaces.IComponentHTMLBase;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
+import com.jwebmp.core.base.interfaces.IComponentStyleBase;
+import com.jwebmp.core.base.servlets.enumarations.DevelopmentEnvironments;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * Defines a page for use with IPage
@@ -95,4 +99,6 @@ public interface IPage<J extends IPage<J>> extends IDefaultService<J>, IComponen
      * @return Browser
      */
     HTMLVersions getHtmlVersion();
+
+    IComponentHierarchyBase<BodyChildren, ?> getBody();
 }
