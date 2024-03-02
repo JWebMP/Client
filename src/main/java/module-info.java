@@ -21,6 +21,8 @@ module com.jwebmp.client {
 
     exports com.jwebmp.core.base.html.interfaces.children.generics;
 
+    exports com.jwebmp.core.plugins;
+
     requires transitive com.guicedee.client;
     requires com.guicedee.jsonrepresentation;
 
