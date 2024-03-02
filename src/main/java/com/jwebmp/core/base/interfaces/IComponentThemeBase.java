@@ -27,88 +27,26 @@ import java.util.*;
  */
 public interface IComponentThemeBase<J extends IComponentThemeBase<J>>
 {
+    /**
+     * Adds in the JavaScript References for the Features
+     *
+     * @return
+     */
+    Set<CSSReference> getCssReferencesAll();
 
-	/**
-	 * Adds in the JavaScript References for the Features
-	 *
-	 * @return
-	 */
-	Set<CSSReference> getCssReferencesAll();
+    /**
+     * Adds in the JavaScript References for the Features
+     *
+     * @return
+     */
+    Set<JavascriptReference> getJavascriptReferencesAll();
 
-	/**
-	 * Adds in the JavaScript References for the Features
-	 *
-	 * @return
-	 */
-	Set<JavascriptReference> getJavascriptReferencesAll();
+    /**
+     * Returns the parents theme or the applied theme
+     * <p>
+     *
+     * @return The theme
+     */
+    Set<Theme> getThemes();
 
-	/**
-	 * Returns the parents theme or the applied theme
-	 * <p>
-	 *
-	 * @return The theme
-	 */
-	Set<Theme> getThemes();
-	
-	/**
-	 * This class with the associated exposed methods
-	 *
-	 * @return This component type-casted
-	 */
-	default IComponentHTMLAttributeBase<?, ?> asAttributeBase()
-	{
-		return (IComponentHTMLAttributeBase<?, ?>) this;
-	}
-	
-	/**
-	 * This class with the associated exposed methods
-	 *
-	 * @return This component type-casted
-	 */
-	default IComponentHTMLBase<?> asTagBase()
-	{
-		return (IComponentHTMLBase<?>) this;
-	}
-	
-	/**
-	 * This class with the associated exposed methods
-	 *
-	 * @return This component type-casted
-	 */
-	default IComponentEventBase<?, ?> asEventBase()
-	{
-		return (IComponentEventBase<?, ?>) this;
-	}
-	
-	/**
-	 * This class with the associated exposed methods
-	 *
-	 * @return This component type-casted
-	 */
-	default IComponentFeatureBase<?, ?> asFeatureBase()
-	{
-		return (IComponentFeatureBase<?, ?>) this;
-	}
-
-	/**
-	 * Returns the components exposed dependency methods
-	 *
-	 * @return This component type-casted
-	 */
-	default IComponentDependencyBase<?> asDependencyBase()
-	{
-		return (IComponentDependencyBase<?>) this;
-	}
-	
-	/**
-	 * Returns the base exposed methods
-	 *
-	 * @return This component type-casted
-	 */
-	default IComponentBase<?> asBase()
-	{
-		return (IComponentBase<?>) this;
-	}
-	
-	
 }

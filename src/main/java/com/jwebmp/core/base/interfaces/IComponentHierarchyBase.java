@@ -16,15 +16,18 @@
  */
 package com.jwebmp.core.base.interfaces;
 
-import com.jwebmp.core.base.html.interfaces.*;
-import com.jwebmp.core.base.references.*;
-import com.jwebmp.core.base.servlets.interfaces.*;
-import com.jwebmp.core.htmlbuilder.css.themes.*;
-import com.jwebmp.core.htmlbuilder.javascript.events.interfaces.*;
-import com.jwebmp.core.services.*;
-import jakarta.validation.constraints.*;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.references.CSSReference;
+import com.jwebmp.core.base.references.JavascriptReference;
+import com.jwebmp.core.base.servlets.interfaces.ICSSComponent;
+import com.jwebmp.core.databind.IConfiguration;
+import com.jwebmp.core.htmlbuilder.css.themes.Theme;
+import com.jwebmp.core.htmlbuilder.javascript.events.interfaces.IEvent;
+import com.jwebmp.core.services.IPage;
+import jakarta.validation.constraints.NotNull;
 
-import java.util.*;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @param <C> All allowed children
@@ -34,7 +37,8 @@ import java.util.*;
  */
 @SuppressWarnings("MissingClassJavaDoc")
 public interface IComponentHierarchyBase<C extends GlobalChildren, J extends IComponentHierarchyBase<C, J>>
-        extends GlobalChildren, CastableComponent<J> {
+        extends GlobalChildren, CastableComponent<J>
+{
     /**
      * Takes an instance and wraps around the component
      * <p>
@@ -356,4 +360,45 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      * @return T
      */
     <T extends IComponentHierarchyBase<?, ?>> T findChild(@NotNull Class<T> childType);
+
+    /**
+     * Returns a property of the first child in the current child chain
+     *
+     * @param propertyName
+     * @param returnBool
+     * @return
+     */
+    boolean readChildrenPropertyFirstResult(String propertyName, boolean returnBool);
+
+
+    /**
+     * if children should be rendered
+     *
+     * @return
+     */
+    boolean isRenderChildren();
+
+    /**
+     * if children should be rendered
+     *
+     * @param renderChildren
+     * @return
+     */
+    J setRenderChildren(boolean renderChildren);
+
+    /**
+     * Adds a custom configuration component to this object for rendering instructions
+     *
+     * @param configuration
+     * @return
+     */
+    J addConfiguration(IConfiguration configuration);
+
+    /**
+     * Returns all the component based configurations for this object
+     *
+     * @param configurationType
+     * @return
+     */
+    Set<IConfiguration> getConfigurations(Class<?> configurationType);
 }

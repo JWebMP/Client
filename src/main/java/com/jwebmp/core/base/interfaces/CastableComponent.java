@@ -2,7 +2,8 @@ package com.jwebmp.core.base.interfaces;
 
 import java.io.Serializable;
 
-public interface CastableComponent<J extends CastableComponent<J>> extends Serializable {
+public interface CastableComponent<J extends CastableComponent<J>> extends Serializable
+{
 
 
     /**
@@ -10,7 +11,8 @@ public interface CastableComponent<J extends CastableComponent<J>> extends Seria
      *
      * @return This component type-casted
      */
-    default IComponentHTMLBase<?> asTagBase() {
+    default IComponentHTMLBase<?> asTagBase()
+    {
         return (IComponentHTMLBase<?>) this;
     }
 
@@ -19,7 +21,8 @@ public interface CastableComponent<J extends CastableComponent<J>> extends Seria
      *
      * @return This component type-casted
      */
-    default IComponentEventBase<?, ?> asEventBase() {
+    default IComponentEventBase<?, ?> asEventBase()
+    {
         return (IComponentEventBase<?, ?>) this;
     }
 
@@ -28,7 +31,8 @@ public interface CastableComponent<J extends CastableComponent<J>> extends Seria
      *
      * @return This component type-casted
      */
-    default IComponentFeatureBase<?, ?> asFeatureBase() {
+    default IComponentFeatureBase<?, ?> asFeatureBase()
+    {
         return (IComponentFeatureBase<?, ?>) this;
     }
 
@@ -37,7 +41,8 @@ public interface CastableComponent<J extends CastableComponent<J>> extends Seria
      *
      * @return This component type-casted
      */
-    default IComponentDependencyBase<?> asDependencyBase() {
+    default IComponentDependencyBase<?> asDependencyBase()
+    {
         return (IComponentDependencyBase<?>) this;
     }
 
@@ -46,7 +51,8 @@ public interface CastableComponent<J extends CastableComponent<J>> extends Seria
      *
      * @return This component type-casted
      */
-    default IComponentHierarchyBase<?, ?> asHierarchyBase() {
+    default IComponentHierarchyBase<?, ?> asHierarchyBase()
+    {
         return (IComponentHierarchyBase<?, ?>) this;
     }
 
@@ -55,7 +61,8 @@ public interface CastableComponent<J extends CastableComponent<J>> extends Seria
      *
      * @return This component type-casted
      */
-    default IComponentStyleBase<?> asStyleBase() {
+    default IComponentStyleBase<?> asStyleBase()
+    {
         return (IComponentStyleBase<?>) this;
     }
 
@@ -65,7 +72,8 @@ public interface CastableComponent<J extends CastableComponent<J>> extends Seria
      *
      * @return This component type-casted
      */
-    default IComponentBase<?> asBase() {
+    default IComponentBase<?> asBase()
+    {
         return (IComponentBase<?>) this;
     }
 
@@ -74,9 +82,22 @@ public interface CastableComponent<J extends CastableComponent<J>> extends Seria
      *
      * @return This component type-casted
      */
-    default IComponentDataBindingBase<?> asAngularBase() {
+    default IComponentDataBindingBase<?> asAngularBase()
+    {
         return (IComponentDataBindingBase<?>) this;
     }
+
+
+    /**
+     * This class with the associated exposed methods
+     *
+     * @return This component type-casted
+     */
+    default IComponentHTMLAttributeBase<?, ?> asAttributeBase()
+    {
+        return (IComponentHTMLAttributeBase<?, ?>) this;
+    }
+
 
     /**
      * Shortcut to adding a style attribute

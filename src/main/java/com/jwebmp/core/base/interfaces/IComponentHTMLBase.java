@@ -20,174 +20,132 @@ import com.jwebmp.core.base.servlets.enumarations.*;
 import jakarta.validation.constraints.*;
 
 /**
- * @param <J>
- * 		This Type
- *
+ * @param <J> This Type
  * @author GedMarc
  * @since Sep 26, 2016
  */
 @SuppressWarnings({"UnusedReturnValue", "MissingClassJavaDoc"})
 public interface IComponentHTMLBase<J extends IComponentHTMLBase<J>>
 {
-	/**
-	 * Returns this tag
-	 * <p>
-	 *
-	 * @return The tag this component will render
-	 */
-	String getTag();
+    /**
+     * Returns this tag
+     * <p>
+     *
+     * @return The tag this component will render
+     */
+    String getTag();
 
-	/**
-	 * Whether or not this component should render a closing tag
-	 *
-	 * @return if this tag has a closing tag
-	 */
-	Boolean isClosingTag();
+    /**
+     * Whether or not this component should render a closing tag
+     *
+     * @return if this tag has a closing tag
+     */
+    Boolean isClosingTag();
 
-	/**
-	 * If a new line for the closing tag is required.
-	 *
-	 * @return If a new line is required
-	 */
-	Boolean isNewLineForClosingTag();
+    /**
+     * If a new line for the closing tag is required.
+     *
+     * @return If a new line is required
+     */
+    Boolean isNewLineForClosingTag();
 
-	/**
-	 * If a new line for the closing tag is required.
-	 *
-	 * @param newLineForClosingTag
-	 * 		A new line is required for this objects closing tag
-	 *
-	 * @return Always this object
-	 */
-	J setNewLineForClosingTag(boolean newLineForClosingTag);
+    /**
+     * If a new line for the closing tag is required.
+     *
+     * @param newLineForClosingTag A new line is required for this objects closing tag
+     * @return Always this object
+     */
+    J setNewLineForClosingTag(boolean newLineForClosingTag);
 
-	/**
-	 * Sets if there must be a new line before the raw text starts
-	 *
-	 * @return If newline for raw text must be generated
-	 */
-	@SuppressWarnings("unused")
-	Boolean isNewLineForRawText();
+    /**
+     * Sets if there must be a new line before the raw text starts
+     *
+     * @return If newline for raw text must be generated
+     */
+    @SuppressWarnings("unused")
+    Boolean isNewLineForRawText();
 
-	/**
-	 * Whether or not this component should render a closing tag
-	 *
-	 * @param noCloseTag
-	 * 		Whether or not to render the closing tag
-	 *
-	 * @return Always this object
-	 */
-	J setClosingTag(boolean noCloseTag);
+    /**
+     * Whether or not this component should render a closing tag
+     *
+     * @param noCloseTag Whether or not to render the closing tag
+     * @return Always this object
+     */
+    J setClosingTag(boolean noCloseTag);
 
-	/**
-	 * Renders as an inline tiny html tag
-	 *
-	 * @return A string of the html tag
-	 */
-	@NotNull
-	String toTinyString();
+    /**
+     * Renders as an inline tiny html tag
+     *
+     * @return A string of the html tag
+     */
+    @NotNull
+    String toTinyString();
 
-	/**
-	 * Sets the number of tab indents for this component
-	 *
-	 * @param currentTabIndents
-	 * 		the tab indentation count
-	 *
-	 * @return Always this object
-	 */
-	J setCurrentTabIndents(int currentTabIndents);
+    /**
+     * Sets the number of tab indents for this component
+     *
+     * @param currentTabIndents the tab indentation count
+     * @return Always this object
+     */
+    J setCurrentTabIndents(int currentTabIndents);
 
-	/**
-	 * Sets if this component must place a new line before the raw text
-	 *
-	 * @param newLineForRawText
-	 * 		If there should be a new line for raw text
-	 *
-	 * @return Always this object
-	 */
-	@NotNull
-	J setNewLineForRawText(boolean newLineForRawText);
+    /**
+     * Sets if this component must place a new line before the raw text
+     *
+     * @param newLineForRawText If there should be a new line for raw text
+     * @return Always this object
+     */
+    @NotNull
+    J setNewLineForRawText(boolean newLineForRawText);
 
-	/**
-	 * Overrides this tag name
-	 * <p>
-	 *
-	 * @param tag
-	 * 		The tag to use instead of the default
-	 *
-	 * @return This Class
-	 */
-	J setTag(String tag);
+    /**
+     * Overrides this tag name
+     * <p>
+     *
+     * @param tag The tag to use instead of the default
+     * @return This Class
+     */
+    J setTag(String tag);
 
-	/**
-	 * Overrides this tag name
-	 * <p>
-	 *
-	 * @param tag
-	 * 		The tag to use instead of the default
-	 *
-	 * @return This Class
-	 */
-	J setTag(ComponentTypes tag);
+    /**
+     * Overrides this tag name
+     * <p>
+     *
+     * @param tag The tag to use instead of the default
+     * @return This Class
+     */
+    J setTag(ComponentTypes tag);
 
-	/**
-	 * Returns the HTML for the given object
-	 * <p>
-	 *
-	 * @param outputHtml
-	 * 		Dummy holder for specifying HTML output
-	 *
-	 * @return The class and the associated ID and children count
-	 */
-	String toString(boolean outputHtml);
+    /**
+     * Returns the HTML for the given object
+     * <p>
+     *
+     * @param outputHtml Dummy holder for specifying HTML output
+     * @return The class and the associated ID and children count
+     */
+    String toString(boolean outputHtml);
 
-	/**
-	 * Returns this components HTML after configuration and pre-rendering
-	 *
-	 * @param tabCount
-	 * 		The number of tabs to indent by
-	 *
-	 * @return The sting with the given tab counts
-	 */
-	String toString(Integer tabCount);
-	
-	/**
-	 * This class with the associated exposed methods
-	 *
-	 * @return This component type-casted
-	 */
-	default IComponentEventBase<?, ?> asEventBase()
-	{
-		return (IComponentEventBase<?, ?>) this;
-	}
-	
-	/**
-	 * This class with the associated exposed methods
-	 *
-	 * @return This component type-casted
-	 */
-	default IComponentFeatureBase<?, ?> asFeatureBase()
-	{
-		return (IComponentFeatureBase<?, ?>) this;
-	}
-	
-	/**
-	 * Returns the components exposed dependency methods
-	 *
-	 * @return This component type-casted
-	 */
-	default IComponentDependencyBase<?> asDependencyBase()
-	{
-		return (IComponentDependencyBase<?>) this;
-	}
-	
-	/**
-	 * Returns the base exposed methods
-	 *
-	 * @return This component type-casted
-	 */
-	default IComponentBase<?> asBase()
-	{
-		return (IComponentBase<?>) this;
-	}
+    /**
+     * Returns this components HTML after configuration and pre-rendering
+     *
+     * @param tabCount The number of tabs to indent by
+     * @return The sting with the given tab counts
+     */
+    String toString(Integer tabCount);
+
+    /**
+     * if the tag should render at all
+     *
+     * @return
+     */
+    boolean isRenderTag();
+
+    /**
+     * If the tag should render at all
+     *
+     * @param renderTag
+     * @return
+     */
+    J setRenderTag(boolean renderTag);
+
 }

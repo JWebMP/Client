@@ -16,9 +16,11 @@
  */
 package com.jwebmp.core.base.interfaces;
 
-import com.jwebmp.core.base.html.attributes.*;
-import com.jwebmp.core.base.html.interfaces.*;
-import jakarta.validation.constraints.*;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.interfaces.AttributeDefinitions;
+import jakarta.validation.constraints.NotNull;
+
+import java.util.Map;
 
 /**
  * @param <A>
@@ -27,7 +29,8 @@ import jakarta.validation.constraints.*;
  * @since Sep 26, 2016
  */
 public interface IComponentHTMLAttributeBase<A extends Enum<?> & AttributeDefinitions, J extends IComponentHTMLAttributeBase<A, J>>
-        extends CastableComponent<J> {
+        extends CastableComponent<J>
+{
     /**
      * Adds an attribute value to the attribute collection, and marks it with a GlobalAttribute Enumeration.
      * <p>
@@ -184,4 +187,18 @@ public interface IComponentHTMLAttributeBase<A extends Enum<?> & AttributeDefini
      * @return A HashMap if this components local attributes. Never null
      */
     Boolean getAttribute(A attributeValue, Boolean uselessInt);
+
+    /**
+     * Returns the attributes map
+     *
+     * @return
+     */
+    Map<String, String> getAttributes();
+
+    /**
+     * A set of attributes that can be used as hard overrides for any custom attributes specified
+     *
+     * @return
+     */
+    Map<String, String> getOverrideAttributes();
 }

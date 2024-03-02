@@ -23,7 +23,7 @@ import java.util.Map;
  * @author GedMarc
  * @since Sep 26, 2016
  */
-public interface IComponentDataBindingBase<J extends IComponentDataBindingBase<J>>
+public interface IComponentDataBindingBase<J extends IComponentDataBindingBase<J>> extends CastableComponent<J>
 {
     /**
      * Adds an object for watching across an application
