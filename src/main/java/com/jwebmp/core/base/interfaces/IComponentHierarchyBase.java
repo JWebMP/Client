@@ -24,7 +24,6 @@ import com.jwebmp.core.databind.IConfiguration;
 import com.jwebmp.core.htmlbuilder.css.themes.Theme;
 import com.jwebmp.core.htmlbuilder.javascript.events.interfaces.IEvent;
 import com.jwebmp.core.services.IPage;
-import jakarta.validation.constraints.NotNull;
 
 import java.util.Map;
 import java.util.Set;
@@ -47,8 +46,8 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      * @param component
      * @return
      */
-    @NotNull
-    <T extends IComponentHierarchyBase<?, ?>> T wrap(@NotNull T component);
+    
+    <T extends IComponentHierarchyBase<?, ?>> T wrap( T component);
 
     /**
      * Takes all children and embeds them into the current children hierarchy
@@ -59,8 +58,8 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      * @param component
      * @return
      */
-    @NotNull
-    <T extends IComponentHierarchyBase<?, ?>> T embed(@NotNull T component);
+    
+    <T extends IComponentHierarchyBase<?, ?>> T embed( T component);
 
     /**
      * Add a new child to this component
@@ -79,7 +78,7 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      * @param newChild
      * @return Always this
      */
-    J add(@NotNull Integer position, C newChild);
+    J add( Integer position, C newChild);
 
     /**
      * Returns null sets the text
@@ -286,7 +285,7 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      * @param classNames more class names
      * @return This object
      */
-    J removeClass(@NotNull Enum<?> className, Enum<?>... classNames);
+    J removeClass( Enum<?> className, Enum<?>... classNames);
 
     /**
      * Enumeration to remove
@@ -294,7 +293,7 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      * @param className
      * @return
      */
-    boolean removeClass(@NotNull Enum<?> className);
+    boolean removeClass( Enum<?> className);
 
     /**
      * Sets the ID and adds the attribute to the global set
@@ -359,7 +358,7 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      * @param childType of type Class T
      * @return T
      */
-    <T extends IComponentHierarchyBase<?, ?>> T findChild(@NotNull Class<T> childType);
+    <T extends IComponentHierarchyBase<?, ?>> T findChild( Class<T> childType);
 
     /**
      * Returns a property of the first child in the current child chain

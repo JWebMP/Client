@@ -14,17 +14,20 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp;
+package com.jwebmp.interception.services;
+
+import com.guicedee.guicedinjection.interfaces.IDefaultService;
+import com.jwebmp.core.base.ajax.AjaxCall;
+import com.jwebmp.core.base.ajax.AjaxResponse;
 
 /**
- * This Class
+ * Intercepts on the sites first call. Local Storage Session Storage and other items are not available
  *
  * @author GedMarc
- * @since 13 Jan 2016
+ * @since 10 Apr 2017
  */
-public class BaseTestClass
+public interface SiteCallIntercepter<J extends SiteCallIntercepter<J>>
+		extends IDefaultService<J>
 {
-    public BaseTestClass()
-    {
-    }
+	void intercept(AjaxCall<?> call, AjaxResponse<?> response);
 }

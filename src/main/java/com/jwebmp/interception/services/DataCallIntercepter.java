@@ -14,17 +14,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp;
+package com.jwebmp.interception.services;
 
 /**
- * This Class
+ * Intercepts the Startup Data Call. Interception for directly after page
+ * delivered
  *
  * @author GedMarc
- * @since 13 Jan 2016
+ * @since 10 Apr 2017
  */
-public class BaseTestClass
+public interface DataCallIntercepter<J extends DataCallIntercepter<J>>
+		extends SiteCallIntercepter<J>
 {
-    public BaseTestClass()
-    {
-    }
+
 }

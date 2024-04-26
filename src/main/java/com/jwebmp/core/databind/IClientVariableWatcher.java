@@ -1,7 +1,7 @@
 package com.jwebmp.core.databind;
 
 import com.jwebmp.core.htmlbuilder.javascript.events.interfaces.IEvent;
-import jakarta.validation.constraints.NotNull;
+
 
 /**
  * SPI for handling variable watchers. The returned string must be JavaScript that will watch the given variable
@@ -17,5 +17,5 @@ public interface IClientVariableWatcher
      * @param eventClass   The event class
      * @return The java script to render
      */
-    String onClientVariableRequest(@NotNull String watchName, @NotNull String variableName, @NotNull Class<? extends IEvent<?, ?>> eventClass);
+    String onClientVariableRequest( String watchName,  String variableName,  Class<? extends IEvent<?, ?>> eventClass);
 }

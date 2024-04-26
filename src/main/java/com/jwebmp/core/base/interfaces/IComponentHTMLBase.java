@@ -16,8 +16,8 @@
  */
 package com.jwebmp.core.base.interfaces;
 
-import com.jwebmp.core.base.servlets.enumarations.*;
-import jakarta.validation.constraints.*;
+import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
+
 
 /**
  * @param <J> This Type
@@ -78,7 +78,7 @@ public interface IComponentHTMLBase<J extends IComponentHTMLBase<J>>
      *
      * @return A string of the html tag
      */
-    @NotNull
+    
     String toTinyString();
 
     /**
@@ -95,7 +95,7 @@ public interface IComponentHTMLBase<J extends IComponentHTMLBase<J>>
      * @param newLineForRawText If there should be a new line for raw text
      * @return Always this object
      */
-    @NotNull
+    
     J setNewLineForRawText(boolean newLineForRawText);
 
     /**

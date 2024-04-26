@@ -2,7 +2,7 @@ package com.jwebmp.core.databind;
 
 import com.guicedee.guicedinjection.interfaces.IDefaultService;
 import com.jwebmp.core.base.interfaces.IComponentDataBindingBase;
-import jakarta.validation.constraints.NotNull;
+
 
 /**
  * SPI to do something when on bind is called
@@ -15,5 +15,5 @@ public interface IOnDataBindCloak extends IDefaultService<IOnDataBindCloak>
      *
      * @param component The component to bind
      */
-    void onCloak(@NotNull IComponentDataBindingBase<?> component);
+    void onCloak( IComponentDataBindingBase<?> component);
 }

@@ -16,10 +16,9 @@
  */
 package com.jwebmp.core.base.interfaces;
 
-import com.jwebmp.core.htmlbuilder.css.enumarations.*;
-import jakarta.validation.constraints.*;
+import com.jwebmp.core.htmlbuilder.css.enumarations.CSSTypes;
 
-import java.util.*;
+import java.util.Map;
 
 @SuppressWarnings("unused")
 /**
@@ -110,6 +109,6 @@ public interface IComponentStyleBase<J extends IComponentStyleBase<J>>
      *                           <p>
      * @return The Component CSS
      */
-    @NotNull
+    
     StringBuilder renderCss(int tabCount, boolean renderOpening, boolean renderInQuotations, boolean isAjaxCall);
 }

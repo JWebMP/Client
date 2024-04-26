@@ -1,7 +1,7 @@
 package com.jwebmp.core.databind;
 
 import com.jwebmp.core.htmlbuilder.javascript.events.interfaces.IEvent;
-import jakarta.validation.constraints.NotNull;
+
 
 /**
  * A specification for notifications of client variable changes (on client data change)
@@ -29,7 +29,7 @@ public abstract class ClientVariableWatcher
      * @param variableName of type String
      * @param eventClass   of type Class ? extends ChangeAdapter
      */
-    public ClientVariableWatcher(@NotNull String watchName, @NotNull String variableName, @NotNull Class<? extends IEvent<?, ?>> eventClass)
+    public ClientVariableWatcher( String watchName,  String variableName,  Class<? extends IEvent<?, ?>> eventClass)
     {
         this.watchName = watchName;
         this.variableName = variableName;
@@ -55,7 +55,7 @@ public abstract class ClientVariableWatcher
      *
      * @param variableName the variableName of this ClientVariableWatcher object.
      */
-    public void setVariableName(@NotNull String variableName)
+    public void setVariableName( String variableName)
     {
         this.variableName = variableName;
     }
@@ -79,7 +79,7 @@ public abstract class ClientVariableWatcher
      *
      * @param eventClass the eventClass of this ClientVariableWatcher object.
      */
-    public void setEventClass(@NotNull Class<? extends IEvent<?, ?>> eventClass)
+    public void setEventClass( Class<? extends IEvent<?, ?>> eventClass)
     {
         this.eventClass = eventClass;
     }
@@ -114,7 +114,7 @@ public abstract class ClientVariableWatcher
      *
      * @param watchName the watchName of this ClientVariableWatcher object.
      */
-    public void setWatchName(@NotNull String watchName)
+    public void setWatchName( String watchName)
     {
         this.watchName = watchName;
     }

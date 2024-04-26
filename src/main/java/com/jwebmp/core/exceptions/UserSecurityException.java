@@ -14,17 +14,39 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp;
+package com.jwebmp.core.exceptions;
 
 /**
- * This Class
+ * Occurs when no Servlet was found in an event situation
  *
  * @author GedMarc
- * @since 13 Jan 2016
+ * @since 09 May 2016
  */
-public class BaseTestClass
+public class UserSecurityException
+		extends Exception
 {
-    public BaseTestClass()
-    {
-    }
+
+	public UserSecurityException()
+	{
+	}
+
+	public UserSecurityException(String message)
+	{
+		super(message);
+	}
+
+	public UserSecurityException(String message, Throwable cause)
+	{
+		super(message, cause);
+	}
+
+	public UserSecurityException(Throwable cause)
+	{
+		super(cause);
+	}
+
+	public UserSecurityException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
+	{
+		super(message, cause, enableSuppression, writableStackTrace);
+	}
 }

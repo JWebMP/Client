@@ -16,16 +16,16 @@
  */
 package com.jwebmp.core.generics;
 
-import com.fasterxml.jackson.annotation.*;
-import com.guicedee.services.jsonrepresentation.json.*;
-import com.jwebmp.core.base.html.interfaces.*;
-import com.jwebmp.core.base.servlets.enumarations.*;
-import jakarta.validation.constraints.*;
-import lombok.extern.java.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.guicedee.services.jsonrepresentation.json.StaticStrings;
+import com.jwebmp.core.base.html.interfaces.NamedPair;
+import com.jwebmp.core.base.servlets.enumarations.RequirementsPriority;
+import lombok.extern.java.Log;
 
-import java.io.*;
+import java.io.Serializable;
 import java.util.*;
-import java.util.logging.*;
+import java.util.logging.Level;
 
 /**
  * Denotes a specific Web Reference, either remotely or locally
@@ -203,7 +203,7 @@ public class WebReference<J extends WebReference<J>>
 	 * @param left Left side, local reference
 	 * @return Always this
 	 */
-	@NotNull
+	
 	@SuppressWarnings("unchecked")
 	public J setLeft(String left)
 	{
@@ -229,7 +229,7 @@ public class WebReference<J extends WebReference<J>>
 	 * @param right The remote reference
 	 * @return Always this
 	 */
-	@NotNull
+	
 	@SuppressWarnings("unchecked")
 	public J setRight(String right)
 	{
@@ -254,7 +254,7 @@ public class WebReference<J extends WebReference<J>>
 	 * @param leftOnly if local only
 	 * @return always this
 	 */
-	@NotNull
+	
 	@SuppressWarnings("unchecked")
 	public J setLeftOnly(boolean leftOnly)
 	{
@@ -278,7 +278,7 @@ public class WebReference<J extends WebReference<J>>
 	 * @param version the version of the reference
 	 * @return Always this
 	 */
-	@NotNull
+	
 	@SuppressWarnings("unchecked")
 	public J setVersion(Double version)
 	{
@@ -334,7 +334,7 @@ public class WebReference<J extends WebReference<J>>
 	 * @param sortOrder The sort order to apply
 	 * @return Always this
 	 */
-	@NotNull
+	
 	@SuppressWarnings("unchecked")
 	public final J setSortOrder(Integer sortOrder)
 	{
@@ -436,7 +436,7 @@ public class WebReference<J extends WebReference<J>>
 	 * @param localReference The local reference
 	 * @return Always this
 	 */
-	@NotNull
+	
 	@SuppressWarnings({"unchecked", "UnusedReturnValue"})
 	public J setLocalReference(String localReference)
 	{
@@ -490,7 +490,7 @@ public class WebReference<J extends WebReference<J>>
 	 * @param remoteReference The remote reference
 	 * @return Always this
 	 */
-	@NotNull
+	
 	@SuppressWarnings({"unchecked", "UnusedReturnValue"})
 	public J setRemoteReference(String remoteReference)
 	{
@@ -537,7 +537,7 @@ public class WebReference<J extends WebReference<J>>
 	 * @param canMinifyAtRemote If verifying on remote is allowed
 	 * @return Always this
 	 */
-	@NotNull
+	
 	@SuppressWarnings({"unchecked", "UnusedReturnValue"})
 	public J setCanMinifyAtRemote(boolean canMinifyAtRemote)
 	{
@@ -561,7 +561,7 @@ public class WebReference<J extends WebReference<J>>
 	 * @param priority The given priority to apply
 	 * @return Always this
 	 */
-	@NotNull
+	
 	@SuppressWarnings("unchecked")
 	public J setPriority(RequirementsPriority priority)
 	{
@@ -585,7 +585,7 @@ public class WebReference<J extends WebReference<J>>
 	 * @param cordovaRequired If cordova is requierd
 	 * @return Always this
 	 */
-	@NotNull
+	
 	@SuppressWarnings("unchecked")
 	public J setCordovaRequired(boolean cordovaRequired)
 	{
@@ -609,7 +609,7 @@ public class WebReference<J extends WebReference<J>>
 	 * @param specifiedClassName A class string to add
 	 */
 	@SuppressWarnings("unchecked")
-	@NotNull
+	
 	public J setSpecifiedClassName(String specifiedClassName)
 	{
 		this.specifiedClassName = specifiedClassName;
@@ -647,7 +647,7 @@ public class WebReference<J extends WebReference<J>>
 	 * @param name The name of this reference
 	 * @return Always this
 	 */
-	@NotNull
+	
 	@SuppressWarnings("unchecked")
 	public J setName(String name)
 	{
@@ -660,7 +660,7 @@ public class WebReference<J extends WebReference<J>>
 	 *
 	 * @return The set
 	 */
-	@NotNull
+	
 	public Set<String> getAdditionalOptions()
 	{
 		if (additionalOptions == null)
@@ -676,7 +676,7 @@ public class WebReference<J extends WebReference<J>>
 	 * @param additionalOptions The options to add to the tag
 	 * @return The tag
 	 */
-	@NotNull
+	
 	public WebReference<J> setAdditionalOptions(Set<String> additionalOptions)
 	{
 		this.additionalOptions = additionalOptions;

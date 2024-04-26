@@ -16,11 +16,10 @@
  */
 package com.jwebmp.core.base.interfaces;
 
-import com.jwebmp.core.base.servlets.enumarations.*;
-import jakarta.validation.constraints.*;
+import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
 
-import java.io.*;
-import java.util.*;
+import java.io.Serializable;
+import java.util.Map;
 
 /**
  * Neater way of accessing the component methods
@@ -192,5 +191,5 @@ public interface IComponentBase<J extends IComponentBase<J>>
 	 */
 	J setTouched(boolean touched);
 	
-	@NotNull ComponentTypes getComponentType();
+	 ComponentTypes getComponentType();
 }

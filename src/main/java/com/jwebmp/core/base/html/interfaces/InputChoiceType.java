@@ -17,7 +17,7 @@
 
 package com.jwebmp.core.base.html.interfaces;
 
-import jakarta.validation.constraints.*;
+
 
 /**
  * An input type that designates a choice - checkbox/radio
@@ -26,6 +26,6 @@ import jakarta.validation.constraints.*;
 public interface InputChoiceType<J>
 {
 	@SuppressWarnings("unchecked")
-	@NotNull
+	
 	J setChecked(boolean checked);
 }

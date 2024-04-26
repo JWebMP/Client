@@ -28,7 +28,7 @@ import com.jwebmp.core.base.interfaces.IComponentHTMLBase;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.base.interfaces.IComponentStyleBase;
 import com.jwebmp.core.base.servlets.enumarations.DevelopmentEnvironments;
-import jakarta.validation.constraints.NotNull;
+
 
 /**
  * Defines a page for use with IPage
@@ -51,7 +51,7 @@ public interface IPage<J extends IPage<J>> extends IDefaultService<J>, IComponen
     IComponentHTMLBase<?> getDocumentType();
 
     @SuppressWarnings("unused")
-    @NotNull
+    
     AjaxResponse<?> onConnect(AjaxCall<?> call, AjaxResponse<?> response);
 
     /**

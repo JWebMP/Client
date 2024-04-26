@@ -16,12 +16,13 @@
  */
 package com.jwebmp.core.base.ajax;
 
-import com.fasterxml.jackson.annotation.*;
-import com.guicedee.guicedservlets.servlets.services.scopes.*;
-import com.guicedee.services.jsonrepresentation.*;
-import com.jwebmp.core.base.servlets.interfaces.*;
-import com.jwebmp.core.htmlbuilder.javascript.*;
-import jakarta.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.guicedee.guicedservlets.servlets.services.scopes.CallScope;
+import com.guicedee.services.jsonrepresentation.IJsonRepresentation;
+import com.jwebmp.core.base.servlets.interfaces.IFeature;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 import java.util.*;
 
@@ -175,7 +176,7 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      * @param reaction
      */
     @SuppressWarnings("unchecked")
-    @NotNull
+    
     public J addReaction(AjaxResponseReaction<?> reaction) {
         getReactions().add(reaction);
         return (J) this;

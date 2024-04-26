@@ -16,9 +16,9 @@
  */
 package com.jwebmp.core.base.references;
 
-import com.jwebmp.core.base.servlets.enumarations.*;
-import com.jwebmp.core.generics.*;
-import jakarta.validation.constraints.*;
+import com.jwebmp.core.base.servlets.enumarations.RequirementsPriority;
+import com.jwebmp.core.generics.WebReference;
+
 
 /**
  * This class is a Java Reference
@@ -160,7 +160,7 @@ public class JavascriptReference
 	 * 		If defer is enabled
 	 */
 	@SuppressWarnings("unchecked")
-	@NotNull
+	
 	public JavascriptReference setDefer(boolean defer)
 	{
 		this.defer = defer;
@@ -194,7 +194,7 @@ public class JavascriptReference
 	 * @return This
 	 */
 	@SuppressWarnings("unchecked")
-	@NotNull
+	
 	public JavascriptReference setAsync(boolean async)
 	{
 		this.async = async;

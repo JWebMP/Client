@@ -14,17 +14,45 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp;
+package com.jwebmp.core.annotations;
 
 /**
- * This Class
- *
  * @author GedMarc
- * @since 13 Jan 2016
+ * @since 05 Apr 2017
  */
-public class BaseTestClass
+public enum PageTypes
 {
-    public BaseTestClass()
-    {
-    }
+	Default,
+	Mobile,
+	Error;
+	/**
+	 * Any sub data
+	 */
+	private String data;
+
+	/**
+	 * A new PageTypes
+	 */
+	PageTypes()
+	{
+
+	}
+
+	/**
+	 * Returns the name or the data contained within
+	 *
+	 * @return
+	 */
+	@Override
+	public String toString()
+	{
+		if (data != null && !data.isEmpty())
+		{
+			return data;
+		}
+		else
+		{
+			return name();
+		}
+	}
 }

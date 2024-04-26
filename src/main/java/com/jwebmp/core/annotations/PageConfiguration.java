@@ -14,20 +14,40 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.core.base.servlets.interfaces;
+package com.jwebmp.core.annotations;
 
+import com.guicedee.services.jsonrepresentation.json.StaticStrings;
+
+import java.lang.annotation.*;
 
 /**
- * Marks a component as one with Data that is available as either AJAX or direct
- *
  * @author GedMarc
- * @since Nov 9, 2016
+ * @since 05 Apr 2017
  */
-@FunctionalInterface
-public interface IDataComponent
+@Target({ElementType.TYPE, ElementType.TYPE_USE})
+@Retention(RetentionPolicy.RUNTIME)
+@Inherited
+@Documented
+public @interface PageConfiguration
 {
 	/**
-	 * Renders the physical data on call
+	 * Specifies the URL that this page serves
+	 *
+	 * @return
 	 */
-	 StringBuilder renderData();
+	String url() default StaticStrings.STRING_FORWARD_SLASH;
+
+	/**
+	 * Specifies the type this page serves (best to leave it alone - or only use one page for error types etc)
+	 *
+	 * @return
+	 */
+	PageTypes type() default PageTypes.Default;
+
+	/**
+	 * If this configuration should be ignored on deployed
+	 *
+	 * @return
+	 */
+	boolean ignore() default false;
 }

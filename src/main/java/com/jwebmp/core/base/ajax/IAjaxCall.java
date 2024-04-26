@@ -17,12 +17,12 @@
 
 package com.jwebmp.core.base.ajax;
 
-import com.guicedee.services.jsonrepresentation.*;
-import com.jwebmp.core.base.interfaces.*;
-import com.jwebmp.core.services.*;
-import jakarta.validation.constraints.*;
+import com.guicedee.services.jsonrepresentation.IJsonRepresentation;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
+import com.jwebmp.core.services.IEventTypes;
 
-import java.util.*;
+import java.util.Date;
+import java.util.Map;
 
 public interface IAjaxCall<J extends AjaxCall<J>> extends IJsonRepresentation<J>
 {
@@ -99,7 +99,7 @@ public interface IAjaxCall<J extends AjaxCall<J>> extends IJsonRepresentation<J>
 	 *
 	 * @return
 	 */
-	@NotNull
+	
 	Map<String, String> getParameters();
 
 	/**
@@ -115,7 +115,7 @@ public interface IAjaxCall<J extends AjaxCall<J>> extends IJsonRepresentation<J>
 	 *
 	 * @return
 	 */
-	@NotNull
+	
 	String getClassName();
 
 	/**
@@ -123,7 +123,7 @@ public interface IAjaxCall<J extends AjaxCall<J>> extends IJsonRepresentation<J>
 	 *
 	 * @param className
 	 */
-	@NotNull
+	
 	
 	J setClassName(String className);
 }

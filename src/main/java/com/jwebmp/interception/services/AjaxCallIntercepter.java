@@ -14,17 +14,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp;
+package com.jwebmp.interception.services;
 
 /**
- * This Class
+ * Intercepts a call specific to an AJAX event.
  *
  * @author GedMarc
- * @since 13 Jan 2016
+ * @since 10 Apr 2017
  */
-public class BaseTestClass
+public interface AjaxCallIntercepter<J extends AjaxCallIntercepter<J>>
+		extends SiteCallIntercepter<J>
 {
-    public BaseTestClass()
-    {
-    }
+
 }

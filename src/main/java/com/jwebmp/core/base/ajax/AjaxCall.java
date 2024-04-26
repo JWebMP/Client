@@ -20,20 +20,12 @@ import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.google.common.base.Strings;
-import com.google.inject.Inject;
-import com.google.inject.Key;
-import com.google.inject.OutOfScopeException;
-import com.google.inject.ProvisionException;
-import com.google.inject.name.Names;
 import com.guicedee.client.IGuiceContext;
 import com.guicedee.guicedinjection.interfaces.ObjectBinderKeys;
 import com.guicedee.guicedservlets.servlets.services.scopes.CallScope;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.core.services.IEventTypes;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.validation.constraints.NotNull;
-import jakarta.websocket.Session;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -110,16 +102,6 @@ public class AjaxCall<J extends AjaxCall<J>>
      * The given path route for the application
      */
     private String route;
-    /**
-     * If this call originates through a web socket (so there is no request or session scope),
-     * or if it is a direct page call
-     */
-    private boolean isWebSocketCall;
-    /**
-     * The web socket session for this call
-     */
-    @JsonIgnore
-    private Session websocketSession;
 
     /**
      * If this is a page or a supporting servlet call
@@ -135,28 +117,6 @@ public class AjaxCall<J extends AjaxCall<J>>
     public AjaxCall()
     {
         //set nothing
-    }
-
-    @Inject
-    void configure()
-    {
-        try
-        {
-            //@see guiced-servlets, this is a default key
-            HttpServletRequest request = IGuiceContext.get(Key.get(HttpServletRequest.class, Names.named("Servlet")));
-            for (Map.Entry<String, String[]> entry : request.getParameterMap()
-                                                            .entrySet())
-            {
-                String key = entry.getKey();
-                String[] value = entry.getValue();
-                getParameters()
-                        .put(key, value[0]);
-            }
-        }
-        catch (OutOfScopeException | ProvisionException e)
-        {
-            //ignore
-        }
     }
 
     public String getAttribute(String attribute)
@@ -239,8 +199,6 @@ public class AjaxCall<J extends AjaxCall<J>>
         setLocalStorage(incoming.getLocalStorage());
         setSessionStorage(incoming.getSessionStorage());
         setHashBang(incoming.getHashBang());
-        setWebsocketSession(incoming.getWebsocketSession());
-        setWebSocketCall(incoming.isWebSocketCall());
         unknownFields = Map.copyOf(incoming.unknownFields);
 
         return (J) this;
@@ -296,55 +254,8 @@ public class AjaxCall<J extends AjaxCall<J>>
         return (J) this;
     }
 
-    /**
-     * If this call originates through a web socket (so there is no request or session scope),
-     * * or if it is a direct page call
-     *
-     * @return
-     */
-    public boolean isWebSocketCall()
-    {
-        return isWebSocketCall;
-    }
-
-    /**
-     * If this call originates through a web socket (so there is no request or session scope),
-     * * or if it is a direct page call
-     *
-     * @param webSocketCall
-     */
-    @SuppressWarnings("unchecked")
-    public J setWebSocketCall(boolean webSocketCall)
-    {
-        isWebSocketCall = webSocketCall;
-        return (J) this;
-    }
-
-    /**
-     * The web socket session for this call
-     *
-     * @return
-     */
-    public Session getWebsocketSession()
-    {
-        return websocketSession;
-    }
-
-    /**
-     * The web socket session for this call
-     *
-     * @param websocketSession
-     * @return
-     */
-    @SuppressWarnings("unchecked")
-    public J setWebsocketSession(Session websocketSession)
-    {
-        this.websocketSession = websocketSession;
-        return (J) this;
-    }
-
     @Override
-    @NotNull
+    
     public Map<String, String> getParameters()
     {
         if (parameters == null)
@@ -363,14 +274,14 @@ public class AjaxCall<J extends AjaxCall<J>>
     }
 
     @Override
-    @NotNull
+    
     public String getClassName()
     {
         return className;
     }
 
     @Override
-    @NotNull
+    
     @SuppressWarnings("unchecked")
     public J setClassName(String className)
     {

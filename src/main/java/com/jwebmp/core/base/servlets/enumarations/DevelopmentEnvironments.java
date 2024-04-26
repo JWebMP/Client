@@ -16,9 +16,8 @@
  */
 package com.jwebmp.core.base.servlets.enumarations;
 
-import jakarta.validation.constraints.*;
 
-import java.util.*;
+import java.util.Properties;
 
 /**
  * Configures the global generation type
@@ -80,7 +79,7 @@ public enum DevelopmentEnvironments
 	 *
 	 * @return
 	 */
-	@NotNull
+	
 	public Properties getEnvironmentProperties()
 	{
 		if (environmentProperties == null)
@@ -96,7 +95,7 @@ public enum DevelopmentEnvironments
 	 * @param environmentProperties
 	 */
 	@SuppressWarnings("unused")
-	public void setEnvironmentProperties(@NotNull Properties environmentProperties)
+	public void setEnvironmentProperties( Properties environmentProperties)
 	{
 		this.environmentProperties = environmentProperties;
 	}

@@ -16,22 +16,24 @@ module com.jwebmp.client {
     exports com.jwebmp.core.htmlbuilder.javascript.events.interfaces;
     exports com.jwebmp.core.services;
 
+    exports com.jwebmp.core.annotations;
+
     exports com.jwebmp.core.events.services;
     exports com.jwebmp.core.databind;
+    exports com.jwebmp.interception.services;
 
     exports com.jwebmp.core.base.html.interfaces.children.generics;
 
     exports com.jwebmp.core.plugins;
 
+    exports com.jwebmp.core.exceptions;
+
     requires transitive com.guicedee.client;
-    requires com.guicedee.jsonrepresentation;
+    requires transitive com.guicedee.jsonrepresentation;
+    requires org.apache.commons.io;
 
     requires static lombok;
     requires static org.apache.commons.lang3;
-
-    requires jakarta.servlet;
-    requires jakarta.websocket;
-    requires jakarta.websocket.client;
 
     opens com.jwebmp.core.base.ajax to com.fasterxml.jackson.databind;
     opens com.jwebmp.core.base.client to com.fasterxml.jackson.databind;

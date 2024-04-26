@@ -16,13 +16,14 @@
  */
 package com.jwebmp.core.base.interfaces;
 
-import com.jwebmp.core.base.html.interfaces.*;
-import com.jwebmp.core.base.references.*;
-import com.jwebmp.core.base.servlets.enumarations.*;
-import com.jwebmp.core.htmlbuilder.javascript.*;
-import jakarta.validation.constraints.*;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.html.interfaces.LifeCycle;
+import com.jwebmp.core.base.references.CSSReference;
+import com.jwebmp.core.base.references.JavascriptReference;
+import com.jwebmp.core.base.servlets.enumarations.RequirementsPriority;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
-import java.util.*;
+import java.util.Set;
 
 /**
  * @param <F>
@@ -149,7 +150,7 @@ public interface IComponentFeatureBase<F extends GlobalFeatures, J extends IComp
 	 *
 	 * @return An ArrayList of features
 	 */
-	@NotNull
+	
 	Set<F> getFeatures();
 	
 	/**

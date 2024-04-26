@@ -16,10 +16,10 @@
  */
 package com.jwebmp.core.base.ajax;
 
-import com.fasterxml.jackson.annotation.*;
-import com.jwebmp.core.base.interfaces.*;
-import com.jwebmp.core.htmlbuilder.javascript.*;
-import jakarta.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
+
 
 /**
  * A JSON Class for component updates
@@ -72,7 +72,7 @@ public class AjaxComponentUpdates<J extends AjaxComponentUpdates<J>>
 	 * @param html
 	 */
 	@SuppressWarnings("unchecked")
-	@NotNull
+	
 	public J setHtml(String html)
 	{
 		this.html = html;
@@ -95,7 +95,7 @@ public class AjaxComponentUpdates<J extends AjaxComponentUpdates<J>>
 	 * @param id
 	 */
 	@SuppressWarnings("unchecked")
-	@NotNull
+	
 	public J setId(String id)
 	{
 		this.id = id;
@@ -118,7 +118,7 @@ public class AjaxComponentUpdates<J extends AjaxComponentUpdates<J>>
 	 * @param insertType
 	 */
 	@SuppressWarnings("unchecked")
-	@NotNull
+	
 	public J setInsertType(AjaxComponentInsertType insertType)
 	{
 		this.insertType = insertType;
