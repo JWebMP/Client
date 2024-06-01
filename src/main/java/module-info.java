@@ -1,4 +1,12 @@
+import com.guicedee.guicedinjection.interfaces.IGuiceConfigurator;
+import com.guicedee.guicedinjection.interfaces.IGuiceModule;
+import com.jwebmp.core.client.implementations.JWebMPClientBinder;
+import com.jwebmp.core.client.implementations.JWebMPClientConfiguration;
+
 module com.jwebmp.client {
+    uses com.jwebmp.interception.services.AjaxCallIntercepter;
+    uses com.jwebmp.interception.services.DataCallIntercepter;
+    uses com.jwebmp.interception.services.SiteCallIntercepter;
     exports com.jwebmp.core.base.ajax;
     exports com.jwebmp.core.base.client;
     exports com.jwebmp.core.base.html.attributes;
@@ -34,6 +42,11 @@ module com.jwebmp.client {
 
     requires static lombok;
     requires static org.apache.commons.lang3;
+    requires transitive net.sf.uadetector.core;
+    requires transitive net.sf.uadetector.resources;
+
+    provides IGuiceModule with JWebMPClientBinder;
+    provides IGuiceConfigurator with JWebMPClientConfiguration;
 
     opens com.jwebmp.core.base.ajax to com.fasterxml.jackson.databind;
     opens com.jwebmp.core.base.client to com.fasterxml.jackson.databind;

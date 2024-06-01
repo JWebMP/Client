@@ -35,7 +35,8 @@ import java.util.*;
 @SuppressWarnings("MissingClassJavaDoc")
 @CallScope
 public class AjaxResponse<J extends AjaxResponse<J>>
-        extends JavaScriptPart<J> {
+        extends JavaScriptPart<J>
+{
     /**
      * Whether or not the response is a success or not
      */
@@ -67,35 +68,40 @@ public class AjaxResponse<J extends AjaxResponse<J>>
 
     private Map<String, String> properties = new HashMap<>();
 
-    public Map<String, String> getProperties() {
+    public Map<String, String> getProperties()
+    {
         return properties;
     }
 
     @JsonProperty("data")
     private Map<String, Object> dataReturns = new HashMap<>();
 
-    public J addDataResponse(String listener, IJsonRepresentation<?> json) {
+    public J addDataResponse(String listener, IJsonRepresentation<?> json)
+    {
         dataReturns.put(listener, json);
         return (J) this;
     }
-    
-    public J addDataResponse(String listener, Map json) throws Exception {
+
+    public J addDataResponse(String listener, Map json) throws Exception
+    {
         dataReturns.put(listener, json);
         return (J) this;
     }
-    
-    public J addDataResponse(String listener, String result){
+
+    public J addDataResponse(String listener, String result)
+    {
         dataReturns.put(listener, result);
         return (J) this;
     }
-    
+
     /**
      * Sets the properties for this response
      *
      * @param properties
      * @return
      */
-    public AjaxResponse<J> setProperties(Map<String, String> properties) {
+    public AjaxResponse<J> setProperties(Map<String, String> properties)
+    {
         this.properties = properties;
         return this;
     }
@@ -108,14 +114,15 @@ public class AjaxResponse<J extends AjaxResponse<J>>
     @JsonProperty("features")
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     @SuppressWarnings("unused")
-    protected Set<String> getFeatureQueries() {
+    protected Set<String> getFeatureQueries()
+    {
         Set<String> list = new LinkedHashSet<>();
         getFeatures().forEach(feature ->
-        {
-            feature.preConfigure();
-            list.add(feature.renderJavascript()
-                    .toString());
-        });
+                              {
+                                  feature.preConfigure();
+                                  list.add(feature.renderJavascript()
+                                                  .toString());
+                              });
         return list;
     }
 
@@ -124,8 +131,10 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @return
      */
-    public Set<IFeature<?, ?>> getFeatures() {
-        if (features == null) {
+    public Set<IFeature<?, ?>> getFeatures()
+    {
+        if (features == null)
+        {
             features = new TreeSet<>();
         }
         return features;
@@ -136,7 +145,8 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @param features
      */
-    public void setFeatures(Set<IFeature<?, ?>> features) {
+    public void setFeatures(Set<IFeature<?, ?>> features)
+    {
         this.features = features;
     }
 
@@ -145,7 +155,8 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @return
      */
-    public boolean isSuccess() {
+    public boolean isSuccess()
+    {
         return success;
     }
 
@@ -154,7 +165,8 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @param success
      */
-    public void setSuccess(boolean success) {
+    public void setSuccess(boolean success)
+    {
         this.success = success;
     }
 
@@ -165,7 +177,8 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      * @return J Always this
      */
     @SuppressWarnings("unchecked")
-    public J addFeature(IFeature<?, ?> feature) {
+    public J addFeature(IFeature<?, ?> feature)
+    {
         getFeatures().add(feature);
         return (J) this;
     }
@@ -176,8 +189,9 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      * @param reaction
      */
     @SuppressWarnings("unchecked")
-    
-    public J addReaction(AjaxResponseReaction<?> reaction) {
+
+    public J addReaction(AjaxResponseReaction<?> reaction)
+    {
         getReactions().add(reaction);
         return (J) this;
     }
@@ -187,8 +201,10 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @return
      */
-    public Set<AjaxResponseReaction<?>> getReactions() {
-        if (reactions == null) {
+    public Set<AjaxResponseReaction<?>> getReactions()
+    {
+        if (reactions == null)
+        {
             reactions = new LinkedHashSet<>();
         }
         return reactions;
@@ -199,8 +215,10 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @return
      */
-    public Map<String, String> getLocalStorage() {
-        if (localStorage == null) {
+    public Map<String, String> getLocalStorage()
+    {
+        if (localStorage == null)
+        {
             localStorage = new HashMap<>();
         }
         return localStorage;
@@ -211,7 +229,8 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @param localStorage
      */
-    public void setLocalStorage(Map<String, String> localStorage) {
+    public void setLocalStorage(Map<String, String> localStorage)
+    {
         this.localStorage = localStorage;
     }
 
@@ -220,8 +239,10 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @return
      */
-    public Map<String, String> getSessionStorage() {
-        if (sessionStorage == null) {
+    public Map<String, String> getSessionStorage()
+    {
+        if (sessionStorage == null)
+        {
             sessionStorage = new HashMap<>();
         }
         return sessionStorage;
@@ -232,7 +253,8 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @param sessionStorage
      */
-    public void setSessionStorage(Map<String, String> sessionStorage) {
+    public void setSessionStorage(Map<String, String> sessionStorage)
+    {
         this.sessionStorage = sessionStorage;
     }
 

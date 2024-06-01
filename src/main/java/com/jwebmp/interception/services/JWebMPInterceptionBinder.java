@@ -5,6 +5,7 @@ import com.google.inject.TypeLiteral;
 
 import java.util.Set;
 
+@SuppressWarnings("Convert2Diamond")
 public interface JWebMPInterceptionBinder
 {
 	Key<Set<AjaxCallIntercepter>> AjaxCallInterceptorKey = Key.get(new TypeLiteral<Set<AjaxCallIntercepter>>() {});
