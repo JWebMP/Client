@@ -41,7 +41,15 @@ public interface IComponentHTMLAttributeBase<A extends Enum<?> & AttributeDefini
     J addAttribute(GlobalAttributes attribute, String value);
 
     @SuppressWarnings("unchecked")
-    J addAttribute( GlobalAttributes attribute,  Object value);
+    J addAttribute(GlobalAttributes attribute, Object value);
+
+    /**
+     * Renders the double quotas as single for the attributes
+     *
+     * @param invertColonRender
+     * @return
+     */
+    public J setInvertColonRender(boolean invertColonRender);
 
     /**
      * Adds an attribute value to the attribute collection, and marks it with a GlobalAttribute Enumeration.
