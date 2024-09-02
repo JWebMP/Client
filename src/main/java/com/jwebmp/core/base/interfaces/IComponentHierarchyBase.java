@@ -25,6 +25,7 @@ import com.jwebmp.core.htmlbuilder.css.themes.Theme;
 import com.jwebmp.core.htmlbuilder.javascript.events.interfaces.IEvent;
 import com.jwebmp.core.services.IPage;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -46,8 +47,8 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      * @param component
      * @return
      */
-    
-    <T extends IComponentHierarchyBase<?, ?>> T wrap( T component);
+
+    <T extends IComponentHierarchyBase<?, ?>> T wrap(T component);
 
     /**
      * Takes all children and embeds them into the current children hierarchy
@@ -58,8 +59,8 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      * @param component
      * @return
      */
-    
-    <T extends IComponentHierarchyBase<?, ?>> T embed( T component);
+
+    <T extends IComponentHierarchyBase<?, ?>> T embed(T component);
 
     /**
      * Add a new child to this component
@@ -78,7 +79,7 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      * @param newChild
      * @return Always this
      */
-    J add( Integer position, C newChild);
+    J add(Integer position, C newChild);
 
     /**
      * Returns null sets the text
@@ -110,7 +111,7 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      *
      * @return An array list of components
      */
-    Set<C> getChildren();
+    List<C> getChildren();
 
     /**
      * Get an array list of all children and their children recursively Includes this object
@@ -285,7 +286,7 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      * @param classNames more class names
      * @return This object
      */
-    J removeClass( Enum<?> className, Enum<?>... classNames);
+    J removeClass(Enum<?> className, Enum<?>... classNames);
 
     /**
      * Enumeration to remove
@@ -293,7 +294,7 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      * @param className
      * @return
      */
-    boolean removeClass( Enum<?> className);
+    boolean removeClass(Enum<?> className);
 
     /**
      * Sets the ID and adds the attribute to the global set
@@ -358,7 +359,7 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      * @param childType of type Class T
      * @return T
      */
-    <T extends IComponentHierarchyBase<?, ?>> T findChild( Class<T> childType);
+    <T extends IComponentHierarchyBase<?, ?>> T findChild(Class<T> childType);
 
     /**
      * Returns a property of the first child in the current child chain
@@ -385,6 +386,8 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      */
     J setRenderChildren(boolean renderChildren);
 
+    Set<IConfiguration> getConfigurations();
+
     /**
      * Adds a custom configuration component to this object for rendering instructions
      *
@@ -399,5 +402,10 @@ public interface IComponentHierarchyBase<C extends GlobalChildren, J extends ICo
      * @param configurationType
      * @return
      */
-    Set<IConfiguration> getConfigurations(Class<?> configurationType);
+    <T> Set<T> getConfigurations(Class<T> configurationType, boolean childrenHierarchy);
+
+    default <T> Set<T> getConfigurations(Class<T> configurationType)
+    {
+        return getConfigurations(configurationType, false);
+    }
 }

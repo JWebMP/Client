@@ -5,33 +5,23 @@ package com.jwebmp.core.base.html.interfaces;
  */
 public interface LifeCycle
 {
-	/**
-	 * Initializes
-	 */
-	void init();
+    /**
+     * Is Configured
+     *
+     * @return if it is configured
+     */
 
-	/**
-	 * Preconfigures
-	 */
-	void preConfigure();
+    boolean isConfigured();
 
-	/**
-	 * Is Configured
-	 *
-	 * @return if it is configured
-	 */
+    /**
+     * If it is initialized
+     *
+     * @return if the component has been initialized
+     */
+    boolean isInitialized();
 
-	boolean isConfigured();
-
-	/**
-	 * If it is initialized
-	 *
-	 * @return if the component has been initialized
-	 */
-	boolean isInitialized();
-
-	/**
-	 * What happens on destroy
-	 */
-	void destroy();
+    /**
+     * What happens on destroy
+     */
+    void destroy();
 }

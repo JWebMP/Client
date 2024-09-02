@@ -119,7 +119,7 @@ public class AjaxResponse<J extends AjaxResponse<J>>
         Set<String> list = new LinkedHashSet<>();
         getFeatures().forEach(feature ->
                               {
-                                  feature.preConfigure();
+                                  feature.toString();
                                   list.add(feature.renderJavascript()
                                                   .toString());
                               });

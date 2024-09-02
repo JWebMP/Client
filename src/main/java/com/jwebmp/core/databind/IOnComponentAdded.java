@@ -9,8 +9,8 @@ public interface IOnComponentAdded<J extends IOnComponentAdded<J>> extends IDefa
     /**
      * intercepts the html render and provides a return value on whether children should be rendered
      *
-     * @param component
-     * @return
+     * @param component The component being added
+     * @param parent    The parent being added to
      */
     void onComponentAdded(IComponentHierarchyBase<GlobalChildren, ?> parent, IComponentHierarchyBase<GlobalChildren, ?> component);
 }

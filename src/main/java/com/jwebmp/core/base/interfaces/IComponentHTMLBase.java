@@ -24,9 +24,14 @@ import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
  * @author GedMarc
  * @since Sep 26, 2016
  */
-@SuppressWarnings({"UnusedReturnValue", "MissingClassJavaDoc"})
+@SuppressWarnings({"UnusedReturnValue",
+        "MissingClassJavaDoc"})
 public interface IComponentHTMLBase<J extends IComponentHTMLBase<J>>
 {
+    //   StringBuilder getHtml();
+
+    //void clearHtmlCache();
+
     /**
      * Returns this tag
      * <p>
@@ -78,7 +83,7 @@ public interface IComponentHTMLBase<J extends IComponentHTMLBase<J>>
      *
      * @return A string of the html tag
      */
-    
+
     String toTinyString();
 
     /**
@@ -95,7 +100,7 @@ public interface IComponentHTMLBase<J extends IComponentHTMLBase<J>>
      * @param newLineForRawText If there should be a new line for raw text
      * @return Always this object
      */
-    
+
     J setNewLineForRawText(boolean newLineForRawText);
 
     /**

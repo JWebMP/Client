@@ -16,7 +16,7 @@
  */
 package com.jwebmp.core.base.html.interfaces;
 
-import com.jwebmp.core.base.interfaces.*;
+import com.jwebmp.core.base.interfaces.CastableComponent;
 
 /**
  * Defines the general interface for components that is allowed on most components
@@ -26,10 +26,8 @@ import com.jwebmp.core.base.interfaces.*;
  * @since 2014/10/26
  */
 
-public interface GlobalChildren {
-    void init();
-
-    void preConfigure();
+public interface GlobalChildren
+{
 
     boolean isConfigured();
 
@@ -42,7 +40,8 @@ public interface GlobalChildren {
      *
      * @return
      */
-    default CastableComponent cast() {
+    default CastableComponent cast()
+    {
         return (CastableComponent) this;
     }
 

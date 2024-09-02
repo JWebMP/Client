@@ -47,7 +47,9 @@ import static com.guicedee.guicedinjection.interfaces.ObjectBinderKeys.*;
  * @author mmagon
  * @since 2014/07/09
  */
-@SuppressWarnings({"MissingClassJavaDoc", "unused", "unchecked"})
+@SuppressWarnings({"MissingClassJavaDoc",
+        "unused",
+        "unchecked"})
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Log
@@ -410,7 +412,7 @@ public class JavaScriptPart<J extends JavaScriptPart<J>>
     /**
      * Method init ...
      */
-    public void init()
+    protected void init()
     {
         //No configuration needed
     }
@@ -418,7 +420,7 @@ public class JavaScriptPart<J extends JavaScriptPart<J>>
     /**
      * Method preConfigure ...
      */
-    public void preConfigure()
+    protected void preConfigure()
     {
         //No configuration needed
     }
