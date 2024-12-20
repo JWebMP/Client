@@ -23,10 +23,13 @@ import com.jwebmp.core.base.client.Browsers;
 import com.jwebmp.core.base.client.HTMLVersions;
 import com.jwebmp.core.base.html.attributes.NoAttributes;
 import com.jwebmp.core.base.html.interfaces.children.BodyChildren;
+import com.jwebmp.core.base.html.interfaces.children.PageChildren;
 import com.jwebmp.core.base.interfaces.IComponentHTMLAttributeBase;
 import com.jwebmp.core.base.interfaces.IComponentHTMLBase;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.base.interfaces.IComponentStyleBase;
+import com.jwebmp.core.base.references.CSSReference;
+import com.jwebmp.core.base.references.JavascriptReference;
 import com.jwebmp.core.base.servlets.enumarations.DevelopmentEnvironments;
 
 
@@ -36,8 +39,9 @@ import com.jwebmp.core.base.servlets.enumarations.DevelopmentEnvironments;
  * @author GedMarc
  * @since Nov 21, 2016
  */
-public interface IPage<J extends IPage<J>> extends IDefaultService<J>, IComponentStyleBase<J>, IComponentHTMLAttributeBase<NoAttributes, J>
-{
+public interface IPage<J extends IPage<J> & IComponentHierarchyBase<PageChildren, J>>
+        extends IDefaultService<J>, IComponentStyleBase<J>, IComponentHTMLAttributeBase<NoAttributes, J>,
+        IHtml<PageChildren, J> {
 
     DevelopmentEnvironments getRunningEnvironment();
 
@@ -51,7 +55,6 @@ public interface IPage<J extends IPage<J>> extends IDefaultService<J>, IComponen
     IComponentHTMLBase<?> getDocumentType();
 
     @SuppressWarnings("unused")
-    
     AjaxResponse<?> onConnect(AjaxCall<?> call, AjaxResponse<?> response);
 
     /**
@@ -101,4 +104,8 @@ public interface IPage<J extends IPage<J>> extends IDefaultService<J>, IComponen
     HTMLVersions getHtmlVersion();
 
     IComponentHierarchyBase<BodyChildren, ?> getBody();
+
+    J addCssReference(CSSReference cssReference);
+
+    J addJavaScriptReference(JavascriptReference jsReference);
 }
