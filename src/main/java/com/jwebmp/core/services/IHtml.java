@@ -8,7 +8,8 @@ import com.jwebmp.core.base.html.interfaces.children.HtmlChildren;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.base.servlets.enumarations.DevelopmentEnvironments;
 
-public interface IHtml<C extends HtmlChildren, J extends IComponentHierarchyBase<C, J>> {
+public interface IHtml<C extends HtmlChildren, J extends IComponentHierarchyBase<C, J>>
+{
     /**
      * Returns the body object
      *

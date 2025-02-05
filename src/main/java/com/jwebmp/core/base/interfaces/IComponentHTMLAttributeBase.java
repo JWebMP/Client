@@ -99,6 +99,14 @@ public interface IComponentHTMLAttributeBase<A extends Enum<?> & AttributeDefini
     J cloneComponent();
 
     /**
+     * If the attribute is present
+     *
+     * @param attribute
+     * @return
+     */
+    boolean hasAttribute(String attribute);
+
+    /**
      * Returns an enumerated HashMap for ease of access
      * <p>
      *
