@@ -118,11 +118,11 @@ public class AjaxResponse<J extends AjaxResponse<J>>
     {
         Set<String> list = new LinkedHashSet<>();
         getFeatures().forEach(feature ->
-                              {
-                                  feature.toString();
-                                  list.add(feature.renderJavascript()
-                                                  .toString());
-                              });
+        {
+            feature.toString();
+            list.add(feature.renderJavascript()
+                    .toString());
+        });
         return list;
     }
 
@@ -258,4 +258,17 @@ public class AjaxResponse<J extends AjaxResponse<J>>
         this.sessionStorage = sessionStorage;
     }
 
+    /**
+     * List of all data sending objects to pop out
+     *
+     * @return
+     */
+    public Map<String, Object> getDataReturns()
+    {
+        if (dataReturns == null)
+        {
+            dataReturns = new HashMap<>();
+        }
+        return dataReturns;
+    }
 }
