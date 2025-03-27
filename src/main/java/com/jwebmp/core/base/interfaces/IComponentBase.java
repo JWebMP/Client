@@ -188,4 +188,8 @@ public interface IComponentBase<J extends IComponentBase<J>>
     J setTouched(boolean touched);
 
     ComponentTypes getComponentType();
+
+    boolean isStartOfRender();
+
+    J setStartOfRender(boolean startOfRender);
 }
