@@ -34,8 +34,10 @@ module com.jwebmp.client {
 
     exports com.jwebmp.core.plugins;
 
+
     exports com.jwebmp.core.exceptions;
 
+    requires transitive jakarta.activation;
     requires transitive com.guicedee.client;
     requires transitive com.guicedee.jsonrepresentation;
     requires org.apache.commons.io;
