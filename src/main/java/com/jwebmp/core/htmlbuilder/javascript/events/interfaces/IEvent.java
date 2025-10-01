@@ -21,6 +21,7 @@ import com.jwebmp.core.base.ajax.*;
 import com.jwebmp.core.base.html.interfaces.*;
 import com.jwebmp.core.base.html.interfaces.events.*;
 import com.jwebmp.core.base.servlets.interfaces.*;
+import io.smallrye.mutiny.Uni;
 
 /**
  * The interface denoting an event type
@@ -28,15 +29,16 @@ import com.jwebmp.core.base.servlets.interfaces.*;
  *
  * @author GedMarc
  */
-public interface IEvent<F extends GlobalFeatures, J extends IEvent<F,J>>
-		extends IFeature<F, J>,
-		GlobalEvents<J>
+public interface IEvent<F extends GlobalFeatures, J extends IEvent<F, J>>
+        extends IFeature<F, J>,
+        GlobalEvents<J>
 {
-	/**
-	 * The method that is fired on call
-	 *
-	 * @param call     The component that made the call
-	 * @param response The Response Object Being Returned
-	 */
-	void fireEvent(AjaxCall<?> call, AjaxResponse<?> response);
+    /**
+     * The method that is fired on call
+     *
+     * @param call     The component that made the call
+     * @param response The Response Object Being Returned
+     * @return
+     */
+    Uni<Void> fireEvent(AjaxCall<?> call, AjaxResponse<?> response);
 }

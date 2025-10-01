@@ -41,6 +41,7 @@ module com.jwebmp.client {
     requires transitive com.guicedee.client;
     requires transitive com.guicedee.jsonrepresentation;
     requires org.apache.commons.io;
+    requires io.smallrye.mutiny;
 
     requires static lombok;
     requires static org.apache.commons.lang3;
