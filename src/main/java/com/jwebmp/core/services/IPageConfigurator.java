@@ -18,4 +18,15 @@ public interface IPageConfigurator<J extends IPageConfigurator<J>>
      */
 
     IPage<?> configure(IPage<?> page);
+
+    /**
+     * Allows to configure the page used in angular compilations (Angular plugin down reference sigh)
+     *
+     * @param page The page currently
+     * @return An updated page or a new page
+     */
+    default IPage<?> configureAngular(IPage<?> page)
+    {
+        return page;
+    }
 }
