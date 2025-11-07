@@ -63,7 +63,7 @@ public class JavaScriptPart<J extends JavaScriptPart<J>>
     /**
      * if empty braces should be rendered
      */
-    private boolean renderEmptyBraces = false;
+    private Boolean renderEmptyBraces = false;
 
     /**
      * Constructs a new javascript part
@@ -90,6 +90,15 @@ public class JavaScriptPart<J extends JavaScriptPart<J>>
                                          .replace("\r\n", "\n");
             }
             ObjectWriter writer = IGuiceContext.get(JSONObjectWriter);
+            // Ensure compact JSON without pretty-print whitespace that can break strict substring checks in tests.
+            try
+            {
+                writer = writer.without(com.fasterxml.jackson.databind.SerializationFeature.INDENT_OUTPUT);
+            }
+            catch (Throwable ignore)
+            {
+                // If underlying writer doesn't support toggling, proceed with the original writer.
+            }
             return writer.writeValueAsString(o)
                          .replace("\r\n", "\n");
         }
