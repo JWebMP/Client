@@ -35,7 +35,7 @@ import java.util.*;
 @SuppressWarnings("MissingClassJavaDoc")
 @CallScope
 public class AjaxResponse<J extends AjaxResponse<J>>
-        extends JavaScriptPart<J>
+        extends JavaScriptPart<J> implements IAjaxResponse<J>
 {
     /**
      * Whether or not the response is a success or not
@@ -68,6 +68,7 @@ public class AjaxResponse<J extends AjaxResponse<J>>
 
     private Map<String, String> properties = new HashMap<>();
 
+    @Override
     public Map<String, String> getProperties()
     {
         return properties;
@@ -76,18 +77,21 @@ public class AjaxResponse<J extends AjaxResponse<J>>
     @JsonProperty("data")
     private Map<String, Object> dataReturns = new HashMap<>();
 
+    @Override
     public J addDataResponse(String listener, IJsonRepresentation<?> json)
     {
         dataReturns.put(listener, json);
         return (J) this;
     }
 
+    @Override
     public J addDataResponse(String listener, Map json) throws Exception
     {
         dataReturns.put(listener, json);
         return (J) this;
     }
 
+    @Override
     public J addDataResponse(String listener, String result)
     {
         dataReturns.put(listener, result);
@@ -121,7 +125,7 @@ public class AjaxResponse<J extends AjaxResponse<J>>
         {
             feature.toString();
             list.add(feature.renderJavascript()
-                    .toString());
+                            .toString());
         });
         return list;
     }
@@ -155,6 +159,7 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @return
      */
+    @Override
     public boolean isSuccess()
     {
         return success;
@@ -165,6 +170,7 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @param success
      */
+    @Override
     public void setSuccess(boolean success)
     {
         this.success = success;
@@ -215,6 +221,7 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @return
      */
+    @Override
     public Map<String, String> getLocalStorage()
     {
         if (localStorage == null)
@@ -229,6 +236,7 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @param localStorage
      */
+    @Override
     public void setLocalStorage(Map<String, String> localStorage)
     {
         this.localStorage = localStorage;
@@ -239,6 +247,7 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @return
      */
+    @Override
     public Map<String, String> getSessionStorage()
     {
         if (sessionStorage == null)
@@ -253,6 +262,7 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @param sessionStorage
      */
+    @Override
     public void setSessionStorage(Map<String, String> sessionStorage)
     {
         this.sessionStorage = sessionStorage;
@@ -263,6 +273,7 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      *
      * @return
      */
+    @Override
     public Map<String, Object> getDataReturns()
     {
         if (dataReturns == null)
