@@ -49,7 +49,7 @@ public interface IComponentHTMLAttributeBase<A extends Enum<?> & AttributeDefini
      * @param invertColonRender
      * @return
      */
-    public J setInvertColonRender(boolean invertColonRender);
+    public @org.jspecify.annotations.NonNull J setInvertColonRender(boolean invertColonRender);
 
     /**
      * Adds an attribute value to the attribute collection, and marks it with a GlobalAttribute Enumeration.

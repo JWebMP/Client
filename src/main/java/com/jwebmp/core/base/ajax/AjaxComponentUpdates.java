@@ -73,7 +73,7 @@ public class AjaxComponentUpdates<J extends AjaxComponentUpdates<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	
-	public J setHtml(String html)
+	public @org.jspecify.annotations.NonNull J setHtml(String html)
 	{
 		this.html = html;
 		return (J) this;
@@ -96,7 +96,7 @@ public class AjaxComponentUpdates<J extends AjaxComponentUpdates<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	
-	public J setId(String id)
+	public @org.jspecify.annotations.NonNull J setId(String id)
 	{
 		this.id = id;
 		return (J) this;
@@ -119,7 +119,7 @@ public class AjaxComponentUpdates<J extends AjaxComponentUpdates<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	
-	public J setInsertType(AjaxComponentInsertType insertType)
+	public @org.jspecify.annotations.NonNull J setInsertType(AjaxComponentInsertType insertType)
 	{
 		this.insertType = insertType;
 		return (J) this;

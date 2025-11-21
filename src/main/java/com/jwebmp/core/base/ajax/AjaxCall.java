@@ -212,7 +212,7 @@ public class AjaxCall<J extends AjaxCall<J>>
 
     @Override
     @SuppressWarnings("unchecked")
-    public J setComponent(IComponentHierarchyBase<?, ?> component)
+    public @org.jspecify.annotations.NonNull J setComponent(IComponentHierarchyBase<?, ?> component)
     {
         this.component = component;
         return (J) this;
@@ -226,7 +226,7 @@ public class AjaxCall<J extends AjaxCall<J>>
 
     @Override
     @SuppressWarnings("unchecked")
-    public J setComponentId(String componentId)
+    public @org.jspecify.annotations.NonNull J setComponentId(String componentId)
     {
         this.componentId = componentId;
         return (J) this;
@@ -234,7 +234,7 @@ public class AjaxCall<J extends AjaxCall<J>>
 
     @Override
     @SuppressWarnings("unchecked")
-    public J setDatetime(Date datetime)
+    public @org.jspecify.annotations.NonNull J setDatetime(Date datetime)
     {
         this.datetime = datetime;
         return (J) this;
@@ -248,7 +248,7 @@ public class AjaxCall<J extends AjaxCall<J>>
 
     @Override
     @SuppressWarnings("unchecked")
-    public J setEventType(IEventTypes<?> eventType)
+    public @org.jspecify.annotations.NonNull J setEventType(IEventTypes<?> eventType)
     {
         this.eventType = eventType;
         return (J) this;
@@ -267,7 +267,7 @@ public class AjaxCall<J extends AjaxCall<J>>
 
     @Override
     @SuppressWarnings("unchecked")
-    public J setParameters(Map<String, String> parameters)
+    public @org.jspecify.annotations.NonNull J setParameters(Map<String, String> parameters)
     {
         this.parameters = parameters;
         return (J) this;
@@ -283,7 +283,7 @@ public class AjaxCall<J extends AjaxCall<J>>
     @Override
     
     @SuppressWarnings("unchecked")
-    public J setClassName(String className)
+    public @org.jspecify.annotations.NonNull J setClassName(String className)
     {
         this.className = className;
         return (J) this;
@@ -306,7 +306,7 @@ public class AjaxCall<J extends AjaxCall<J>>
      * @return
      */
     @SuppressWarnings("unchecked")
-    public J setPageCall(boolean pageCall)
+    public @org.jspecify.annotations.NonNull J setPageCall(boolean pageCall)
     {
         this.pageCall = pageCall;
         return (J) this;
@@ -332,7 +332,7 @@ public class AjaxCall<J extends AjaxCall<J>>
      * @param sessionStorage
      * @return
      */
-    public J setSessionStorage(Map<String, String> sessionStorage)
+    public @org.jspecify.annotations.NonNull J setSessionStorage(Map<String, String> sessionStorage)
     {
         this.sessionStorage = sessionStorage;
         return (J) this;
@@ -358,7 +358,7 @@ public class AjaxCall<J extends AjaxCall<J>>
      * @param localStorage
      * @return
      */
-    public J setLocalStorage(Map<String, String> localStorage)
+    public @org.jspecify.annotations.NonNull J setLocalStorage(Map<String, String> localStorage)
     {
         this.localStorage = localStorage;
         return (J) this;
@@ -388,7 +388,7 @@ public class AjaxCall<J extends AjaxCall<J>>
     }
 
     @SuppressWarnings("unchecked")
-    public J setAttributes(Map<String, Object> attributes)
+    public @org.jspecify.annotations.NonNull J setAttributes(Map<String, Object> attributes)
     {
         this.attributes = attributes;
         return (J) this;

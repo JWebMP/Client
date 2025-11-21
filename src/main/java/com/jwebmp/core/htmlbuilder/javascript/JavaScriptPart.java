@@ -290,7 +290,7 @@ public class JavaScriptPart<J extends JavaScriptPart<J>>
      */
     @SuppressWarnings("unchecked")
     @JsonIgnore
-    public J setRenderEmptyBraces(boolean renderEmptyBraces)
+    public @org.jspecify.annotations.NonNull J setRenderEmptyBraces(boolean renderEmptyBraces)
     {
         this.renderEmptyBraces = renderEmptyBraces;
         return (J) this;

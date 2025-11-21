@@ -198,7 +198,7 @@ public class WebReference<J extends WebReference<J>>
      */
 
     @SuppressWarnings("unchecked")
-    public J setLeft(String left) {
+    public @org.jspecify.annotations.NonNull J setLeft(String left) {
         this.left = left;
         localReference = left;
         return (J) this;
@@ -222,7 +222,7 @@ public class WebReference<J extends WebReference<J>>
      */
 
     @SuppressWarnings("unchecked")
-    public J setRight(String right) {
+    public @org.jspecify.annotations.NonNull J setRight(String right) {
         this.right = right;
         remoteReference = right;
         return (J) this;
@@ -245,7 +245,7 @@ public class WebReference<J extends WebReference<J>>
      */
 
     @SuppressWarnings("unchecked")
-    public J setLeftOnly(boolean leftOnly) {
+    public @org.jspecify.annotations.NonNull J setLeftOnly(boolean leftOnly) {
         this.leftOnly = leftOnly;
         return (J) this;
     }
@@ -267,7 +267,7 @@ public class WebReference<J extends WebReference<J>>
      */
 
     @SuppressWarnings("unchecked")
-    public J setVersion(Double version) {
+    public @org.jspecify.annotations.NonNull J setVersion(Double version) {
         this.version = version;
         return (J) this;
     }
@@ -319,7 +319,7 @@ public class WebReference<J extends WebReference<J>>
      */
 
     @SuppressWarnings("unchecked")
-    public final J setSortOrder(Integer sortOrder) {
+    public @org.jspecify.annotations.NonNull J setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
         return (J) this;
     }
@@ -406,7 +406,7 @@ public class WebReference<J extends WebReference<J>>
      */
 
     @SuppressWarnings({"unchecked", "UnusedReturnValue"})
-    public J setLocalReference(String localReference) {
+    public @org.jspecify.annotations.NonNull J setLocalReference(String localReference) {
         setLeft(localReference);
         this.localReference = localReference;
         return (J) this;
@@ -457,7 +457,7 @@ public class WebReference<J extends WebReference<J>>
      */
 
     @SuppressWarnings({"unchecked", "UnusedReturnValue"})
-    public J setRemoteReference(String remoteReference) {
+    public @org.jspecify.annotations.NonNull J setRemoteReference(String remoteReference) {
         setRight(remoteReference);
         this.remoteReference = remoteReference;
         return (J) this;
@@ -500,7 +500,7 @@ public class WebReference<J extends WebReference<J>>
      */
 
     @SuppressWarnings({"unchecked", "UnusedReturnValue"})
-    public J setCanMinifyAtRemote(boolean canMinifyAtRemote) {
+    public @org.jspecify.annotations.NonNull J setCanMinifyAtRemote(boolean canMinifyAtRemote) {
         this.canMinifyAtRemote = canMinifyAtRemote;
         return (J) this;
     }
@@ -522,7 +522,7 @@ public class WebReference<J extends WebReference<J>>
      */
 
     @SuppressWarnings("unchecked")
-    public J setPriority(RequirementsPriority priority) {
+    public @org.jspecify.annotations.NonNull J setPriority(RequirementsPriority priority) {
         this.priority = priority;
         return (J) this;
     }
@@ -544,7 +544,7 @@ public class WebReference<J extends WebReference<J>>
      */
 
     @SuppressWarnings("unchecked")
-    public J setCordovaRequired(boolean cordovaRequired) {
+    public @org.jspecify.annotations.NonNull J setCordovaRequired(boolean cordovaRequired) {
         this.cordovaRequired = cordovaRequired;
         return (J) this;
     }
@@ -565,7 +565,7 @@ public class WebReference<J extends WebReference<J>>
      */
     @SuppressWarnings("unchecked")
 
-    public J setSpecifiedClassName(String specifiedClassName) {
+    public @org.jspecify.annotations.NonNull J setSpecifiedClassName(String specifiedClassName) {
         this.specifiedClassName = specifiedClassName;
         return (J) this;
     }
@@ -599,7 +599,7 @@ public class WebReference<J extends WebReference<J>>
      */
 
     @SuppressWarnings("unchecked")
-    public J setName(String name) {
+    public @org.jspecify.annotations.NonNull J setName(String name) {
         this.name = name;
         return (J) this;
     }
@@ -645,7 +645,7 @@ public class WebReference<J extends WebReference<J>>
      * @return
      */
     @SuppressWarnings("unchecked")
-    public J setLinkId(String linkId) {
+    public @org.jspecify.annotations.NonNull J setLinkId(String linkId) {
         this.linkId = linkId;
         return (J) this;
     }
