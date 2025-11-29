@@ -1,6 +1,6 @@
 package com.jwebmp.core.services;
 
-import com.guicedee.guicedinjection.interfaces.*;
+import com.guicedee.client.services.IDefaultService;
 
 import java.util.*;
 import java.util.regex.*;

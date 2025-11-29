@@ -1,7 +1,7 @@
 package com.jwebmp.core.services;
 
-import com.guicedee.guicedinjection.interfaces.IDefaultService;
-import com.guicedee.guicedinjection.interfaces.IServiceEnablement;
+import com.guicedee.client.services.IDefaultService;
+import com.guicedee.client.services.IServiceEnablement;
 
 
 /**

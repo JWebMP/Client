@@ -1,6 +1,6 @@
 package com.jwebmp.core.databind;
 
-import com.guicedee.guicedinjection.interfaces.IDefaultService;
+import com.guicedee.client.services.IDefaultService;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 
 public interface IOnComponentHtmlRender<J extends IOnComponentHtmlRender<J>> extends IDefaultService<J>

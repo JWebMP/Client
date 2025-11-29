@@ -3,9 +3,9 @@ package com.jwebmp.core.client.implementations;
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
 import com.guicedee.client.IGuiceContext;
-import com.guicedee.guicedinjection.interfaces.IGuiceModule;
+import com.guicedee.client.services.lifecycle.IGuiceModule;
 
-import com.guicedee.guicedservlets.servlets.services.scopes.CallScope;
+import com.guicedee.client.scopes.CallScope;
 import com.jwebmp.core.base.ajax.AjaxCall;
 import com.jwebmp.core.base.ajax.AjaxResponse;
 import com.jwebmp.interception.services.AjaxCallIntercepter;

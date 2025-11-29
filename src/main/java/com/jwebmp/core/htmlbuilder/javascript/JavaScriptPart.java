@@ -38,7 +38,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-import static com.guicedee.guicedinjection.interfaces.ObjectBinderKeys.*;
+import static com.guicedee.client.implementations.ObjectBinderKeys.*;
 
 /**
  * Defines a section of a JavaScript part e.g. Position

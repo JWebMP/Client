@@ -1,5 +1,5 @@
-import com.guicedee.guicedinjection.interfaces.IGuiceConfigurator;
-import com.guicedee.guicedinjection.interfaces.IGuiceModule;
+import com.guicedee.client.services.lifecycle.IGuiceConfigurator;
+import com.guicedee.client.services.lifecycle.IGuiceModule;
 import com.jwebmp.core.client.implementations.JWebMPClientBinder;
 import com.jwebmp.core.client.implementations.JWebMPClientConfiguration;
 

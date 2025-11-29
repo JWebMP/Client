@@ -1,6 +1,6 @@
 package com.jwebmp.core.events.services;
 
-import com.guicedee.guicedinjection.interfaces.IDefaultService;
+import com.guicedee.client.services.IDefaultService;
 import com.jwebmp.core.htmlbuilder.javascript.events.interfaces.IEvent;
 
 public interface IOnEventServiceBase<J extends IOnEventServiceBase<J>>

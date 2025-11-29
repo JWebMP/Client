@@ -24,7 +24,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.guicedee.client.IGuiceContext;
-import com.guicedee.guicedinjection.interfaces.ObjectBinderKeys;
+import com.guicedee.client.implementations.ObjectBinderKeys;
 import com.guicedee.services.jsonrepresentation.IJsonRepresentation;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import lombok.extern.java.Log;
