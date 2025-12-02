@@ -1,6 +1,7 @@
-package com.jwebmp.core.base.ajax;
+package com.jwebmp.core.base.ajax.test;
 
 import com.jwebmp.BaseTestClass;
+import com.jwebmp.core.base.ajax.AjaxCall;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
