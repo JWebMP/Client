@@ -18,6 +18,9 @@
 package com.jwebmp.core.base.ajax.test;
 
 import com.jwebmp.core.base.ajax.AjaxResponse;
+import com.jwebmp.core.base.ajax.AjaxResponseReaction;
+import com.jwebmp.core.base.ajax.AjaxResponseType;
+import com.jwebmp.core.base.ajax.ReactionType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
