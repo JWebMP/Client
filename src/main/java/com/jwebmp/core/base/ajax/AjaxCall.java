@@ -108,8 +108,8 @@ public class AjaxCall<J extends AjaxCall<J>>
      */
     private boolean pageCall;
 
-    private Map<String, Object> unknownFields = new HashMap<>();
-    private Map<String, Object> history = new HashMap<>();
+    private HashMap<String, Object> unknownFields = new HashMap<>();
+    private HashMap<String, Object> history = new HashMap<>();
 
     /**
      * JSon Jackson Constructor
@@ -199,7 +199,7 @@ public class AjaxCall<J extends AjaxCall<J>>
         setLocalStorage(incoming.getLocalStorage());
         setSessionStorage(incoming.getSessionStorage());
         setHashBang(incoming.getHashBang());
-        unknownFields = Map.copyOf(incoming.unknownFields);
+        unknownFields = new HashMap<>(incoming.unknownFields);
 
         return (J) this;
     }
@@ -432,7 +432,7 @@ public class AjaxCall<J extends AjaxCall<J>>
         return history;
     }
 
-    public AjaxCall<J> setHistory(Map<String, Object> history)
+    public AjaxCall<J> setHistory(HashMap<String, Object> history)
     {
         this.history = history;
         return this;
