@@ -17,7 +17,7 @@
 package com.jwebmp.core.generics;
 
 import com.fasterxml.jackson.annotation.*;
-import com.guicedee.services.jsonrepresentation.json.*;
+import com.guicedee.modules.services.jsonrepresentation.json.*;
 import org.apache.commons.lang3.*;
 
 import java.io.*;

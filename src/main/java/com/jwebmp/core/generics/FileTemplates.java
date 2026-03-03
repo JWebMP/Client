@@ -17,7 +17,7 @@
 package com.jwebmp.core.generics;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.guicedee.services.jsonrepresentation.json.StaticStrings;
+import com.guicedee.modules.services.jsonrepresentation.json.StaticStrings;
 import lombok.extern.java.Log;
 import org.apache.commons.io.IOUtils;
 

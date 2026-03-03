@@ -17,7 +17,7 @@
 
 package com.jwebmp.core.base.ajax;
 
-import com.guicedee.services.jsonrepresentation.IJsonRepresentation;
+import com.guicedee.modules.services.jsonrepresentation.IJsonRepresentation;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.services.IEventTypes;
 
