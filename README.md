@@ -1,5 +1,6 @@
 # JWebMP Client
 
+[![Build](https://github.com/JWebMP/Client/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/JWebMP/Client/actions/workflows/build.yml)
 [![Maven Central](https://img.shields.io/maven-central/v/com.jwebmp.client/jwebmp-client)](https://central.sonatype.com/artifact/com.jwebmp.client/jwebmp-client)
 [![Maven Snapshot](https://img.shields.io/nexus/s/com.jwebmp.client/jwebmp-client?server=https%3A%2F%2Foss.sonatype.org&label=Maven%20Snapshot)](https://oss.sonatype.org/content/repositories/snapshots/com/jwebmp/client/jwebmp-client/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](https://www.apache.org/licenses/LICENSE-2.0)
