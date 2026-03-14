@@ -3,7 +3,7 @@ package com.jwebmp.core.client.implementations;
 import com.guicedee.client.services.IGuiceConfig;
 import com.guicedee.client.services.lifecycle.IGuiceConfigurator;
 
-public class JWebMPClientConfiguration implements IGuiceConfigurator
+public class JWebMPClientConfiguration implements IGuiceConfigurator<JWebMPClientConfiguration>
 {
     @Override
     public IGuiceConfig<?> configure(IGuiceConfig<?> config)
