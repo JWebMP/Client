@@ -33,7 +33,7 @@ Built on [GuicedEE Client](../../GuicedEE/client) · [JWebMP](https://jwebmp.com
 <summary>Gradle (Kotlin DSL)</summary>
 
 ```kotlin
-implementation("com.jwebmp:jwebmp-client:2.0.0-RC8")
+implementation("com.jwebmp:jwebmp-client:2.0.0-RC9")
 ```
 </details>
 
