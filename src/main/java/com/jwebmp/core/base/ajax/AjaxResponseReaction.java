@@ -195,10 +195,11 @@ public class AjaxResponseReaction<J extends AjaxResponseReaction<J>>
 	 *
 	 * @return This object
 	 */
-	public AjaxResponseReaction setReactionTitle(String reactionTitle)
+	@SuppressWarnings("unchecked")
+    public J setReactionTitle(String reactionTitle)
 	{
 		this.reactionTitle = reactionTitle;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -220,10 +221,11 @@ public class AjaxResponseReaction<J extends AjaxResponseReaction<J>>
 	 *
 	 * @return This object
 	 */
-	public AjaxResponseReaction setReactionData(String reactionData)
+	@SuppressWarnings("unchecked")
+    public J setReactionData(String reactionData)
 	{
 		this.reactionData = reactionData;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -244,10 +246,11 @@ public class AjaxResponseReaction<J extends AjaxResponseReaction<J>>
 	 *
 	 * @return This object
 	 */
-	public AjaxResponseReaction setReactionType(ReactionType reactionType)
+	@SuppressWarnings("unchecked")
+    public J setReactionType(ReactionType reactionType)
 	{
 		this.reactionType = reactionType == null ? ReactionType.DialogDisplay : reactionType;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -268,10 +271,11 @@ public class AjaxResponseReaction<J extends AjaxResponseReaction<J>>
 	 *
 	 * @return This object
 	 */
-	public AjaxResponseReaction setResponseType(AjaxResponseType responseType)
+	@SuppressWarnings("unchecked")
+    public J setResponseType(AjaxResponseType responseType)
 	{
 		this.responseType = responseType == null ? AjaxResponseType.Info : responseType;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -292,11 +296,11 @@ public class AjaxResponseReaction<J extends AjaxResponseReaction<J>>
 	 *
 	 * @return This object
 	 */
-	@SuppressWarnings({"WeakerAccess", "UnusedReturnValue"})
-	public AjaxResponseReaction setActionTimeout(int actionTimeout)
+	@SuppressWarnings({"WeakerAccess", "UnusedReturnValue", "unchecked"})
+    public J setActionTimeout(int actionTimeout)
 	{
 		this.actionTimeout = actionTimeout;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -317,9 +321,10 @@ public class AjaxResponseReaction<J extends AjaxResponseReaction<J>>
 	 *
 	 * @return This object
 	 */
-	public AjaxResponseReaction setOptions(JavaScriptPart<?> options)
+	@SuppressWarnings("unchecked")
+    public J setOptions(JavaScriptPart<?> options)
 	{
 		this.options = options;
-		return this;
+		return (J) this;
 	}
 }

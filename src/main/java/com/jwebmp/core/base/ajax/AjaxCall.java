@@ -399,10 +399,11 @@ public class AjaxCall<J extends AjaxCall<J>>
         return headers;
     }
 
-    public AjaxCall<J> setHeaders(HeadersDTO headers)
+    @SuppressWarnings("unchecked")
+    public J setHeaders(HeadersDTO headers)
     {
         this.headers = headers;
-        return this;
+        return (J) this;
     }
 
     public String getRoute()
@@ -410,10 +411,11 @@ public class AjaxCall<J extends AjaxCall<J>>
         return route;
     }
 
-    public AjaxCall<J> setRoute(String route)
+    @SuppressWarnings("unchecked")
+    public J setRoute(String route)
     {
         this.route = route;
-        return this;
+        return (J) this;
     }
 
     public Map<String, Object> getState()
@@ -421,10 +423,11 @@ public class AjaxCall<J extends AjaxCall<J>>
         return state;
     }
 
-    public AjaxCall<J> setState(Map<String, Object> state)
+    @SuppressWarnings("unchecked")
+    public J setState(Map<String, Object> state)
     {
         this.state = state;
-        return this;
+        return (J) this;
     }
 
     public Map<String, Object> getHistory()
@@ -432,9 +435,10 @@ public class AjaxCall<J extends AjaxCall<J>>
         return history;
     }
 
-    public AjaxCall<J> setHistory(HashMap<String, Object> history)
+    @SuppressWarnings("unchecked")
+    public J setHistory(HashMap<String, Object> history)
     {
         this.history = history;
-        return this;
+        return (J) this;
     }
 }

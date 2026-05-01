@@ -624,9 +624,10 @@ public class WebReference<J extends WebReference<J>>
      * @return The tag
      */
 
-    public WebReference<J> setAdditionalOptions(Set<String> additionalOptions) {
+    @SuppressWarnings("unchecked")
+    public J setAdditionalOptions(Set<String> additionalOptions) {
         this.additionalOptions = additionalOptions;
-        return this;
+        return (J) this;
     }
 
     /**

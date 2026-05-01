@@ -104,10 +104,11 @@ public class AjaxResponse<J extends AjaxResponse<J>>
      * @param properties
      * @return
      */
-    public AjaxResponse<J> setProperties(Map<String, String> properties)
+    @SuppressWarnings("unchecked")
+    public J setProperties(Map<String, String> properties)
     {
         this.properties = properties;
-        return this;
+        return (J) this;
     }
 
     /**
