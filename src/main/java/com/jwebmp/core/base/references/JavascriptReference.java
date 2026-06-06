@@ -159,9 +159,8 @@ public class JavascriptReference
 	 * @param defer
 	 * 		If defer is enabled
 	 */
-	@SuppressWarnings("unchecked")
-	
-	public JavascriptReference setDefer(boolean defer)
+
+    public JavascriptReference setDefer(boolean defer)
 	{
 		this.defer = defer;
 		if (defer)
@@ -193,9 +192,8 @@ public class JavascriptReference
 	 *
 	 * @return This
 	 */
-	@SuppressWarnings("unchecked")
-	
-	public JavascriptReference setAsync(boolean async)
+
+    public JavascriptReference setAsync(boolean async)
 	{
 		this.async = async;
 		if (async)

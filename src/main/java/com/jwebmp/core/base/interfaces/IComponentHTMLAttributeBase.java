@@ -40,7 +40,6 @@ public interface IComponentHTMLAttributeBase<A extends Enum<?> & AttributeDefini
      */
     J addAttribute(GlobalAttributes attribute, String value);
 
-    @SuppressWarnings("unchecked")
     J addAttribute(GlobalAttributes attribute, Object value);
 
     /**

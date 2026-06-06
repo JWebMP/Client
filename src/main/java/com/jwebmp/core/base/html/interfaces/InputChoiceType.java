@@ -25,7 +25,6 @@ package com.jwebmp.core.base.html.interfaces;
 @FunctionalInterface
 public interface InputChoiceType<J>
 {
-	@SuppressWarnings("unchecked")
-	
-	J setChecked(boolean checked);
+
+    J setChecked(boolean checked);
 }

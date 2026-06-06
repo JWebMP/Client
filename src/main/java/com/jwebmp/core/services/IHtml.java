@@ -53,7 +53,6 @@ public interface IHtml<C extends HtmlChildren, J extends IComponentHierarchyBase
      *
      * @param runningEnvironmentSetting The running environment value
      */
-    @SuppressWarnings("unchecked")
     J setRunningEnvironment(DevelopmentEnvironments runningEnvironmentSetting);
 
     /**
@@ -69,7 +68,6 @@ public interface IHtml<C extends HtmlChildren, J extends IComponentHierarchyBase
      * @param body
      */
 
-    @SuppressWarnings("unchecked")
     J setBody(IBody<?, ?> body);
 
     /**
@@ -78,6 +76,5 @@ public interface IHtml<C extends HtmlChildren, J extends IComponentHierarchyBase
      * @param head
      * @return
      */
-    @SuppressWarnings("unchecked")
     J setHead(IHead head);
 }
