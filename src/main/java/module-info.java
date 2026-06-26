@@ -51,21 +51,21 @@ module com.jwebmp.client {
     provides IGuiceModule with JWebMPClientBinder;
     provides IGuiceConfigurator with JWebMPClientConfiguration;
 
-    opens com.jwebmp.core.base.ajax to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.base.client to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.base.html.attributes to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.base.html.interfaces to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.base.html.interfaces.children to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.base.html.interfaces.events to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.base.interfaces to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.base.references to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.base.servlets.enumarations to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.base.servlets.interfaces to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.generics to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.htmlbuilder.css.enumarations to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.htmlbuilder.css.themes to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.htmlbuilder.javascript to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.htmlbuilder.javascript.events.interfaces to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.services to com.fasterxml.jackson.databind;
-    opens com.jwebmp.core.events.services to com.fasterxml.jackson.databind, com.google.guice;
+    opens com.jwebmp.core.base.ajax to tools.jackson.databind;
+    opens com.jwebmp.core.base.client to tools.jackson.databind;
+    opens com.jwebmp.core.base.html.attributes to tools.jackson.databind;
+    opens com.jwebmp.core.base.html.interfaces to tools.jackson.databind;
+    opens com.jwebmp.core.base.html.interfaces.children to tools.jackson.databind;
+    opens com.jwebmp.core.base.html.interfaces.events to tools.jackson.databind;
+    opens com.jwebmp.core.base.interfaces to tools.jackson.databind;
+    opens com.jwebmp.core.base.references to tools.jackson.databind;
+    opens com.jwebmp.core.base.servlets.enumarations to tools.jackson.databind;
+    opens com.jwebmp.core.base.servlets.interfaces to tools.jackson.databind;
+    opens com.jwebmp.core.generics to tools.jackson.databind;
+    opens com.jwebmp.core.htmlbuilder.css.enumarations to tools.jackson.databind;
+    opens com.jwebmp.core.htmlbuilder.css.themes to tools.jackson.databind;
+    opens com.jwebmp.core.htmlbuilder.javascript to tools.jackson.databind;
+    opens com.jwebmp.core.htmlbuilder.javascript.events.interfaces to tools.jackson.databind;
+    opens com.jwebmp.core.services to tools.jackson.databind;
+    opens com.jwebmp.core.events.services to tools.jackson.databind, com.google.guice;
 }

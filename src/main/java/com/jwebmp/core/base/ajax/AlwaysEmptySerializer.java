@@ -16,29 +16,27 @@
  */
 package com.jwebmp.core.base.ajax;
 
-import com.fasterxml.jackson.core.*;
-import com.fasterxml.jackson.databind.*;
-
-import java.io.*;
+import tools.jackson.core.*;
+import tools.jackson.databind.*;
 
 /**
  * @author GedMarc
  * @since Nov 9, 2016
  */
 class AlwaysEmptySerializer
-		extends JsonSerializer<Object>
+                extends ValueSerializer<Object>
 {
-	/**
-	 * Always serialize as an empty serialization
-	 */
-	public AlwaysEmptySerializer()
-	{
-		//Nothing required here
-	}
+        /**
+         * Always serialize as an empty serialization
+         */
+        public AlwaysEmptySerializer()
+        {
+                //Nothing required here
+        }
 
-	@Override
-	public void serialize(Object t, JsonGenerator jg, SerializerProvider sp) throws IOException
-	{
-		jg.writeNull();
-	}
+        @Override
+        public void serialize(Object t, JsonGenerator jg, SerializationContext sp)
+        {
+                jg.writeNull();
+        }
 }

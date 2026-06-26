@@ -17,8 +17,8 @@
 package com.jwebmp.core.base.ajax;
 
 import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
+import tools.jackson.core.JacksonException;
+import tools.jackson.core.type.TypeReference;
 import com.google.common.base.Strings;
 import com.guicedee.client.IGuiceContext;
 import com.guicedee.client.implementations.ObjectBinderKeys;
@@ -152,7 +152,7 @@ public class AjaxCall<J extends AjaxCall<J>>
                     .get(ObjectBinderKeys.DefaultObjectMapper)
                     .readValue(variableText, typeRef);
         }
-        catch (JsonProcessingException e)
+        catch (JacksonException e)
         {
             return new HashMap<>();
         }

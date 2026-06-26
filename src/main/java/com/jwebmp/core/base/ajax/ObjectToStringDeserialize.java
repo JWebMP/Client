@@ -16,11 +16,9 @@
  */
 package com.jwebmp.core.base.ajax;
 
-import com.fasterxml.jackson.core.*;
-import com.fasterxml.jackson.databind.*;
+import tools.jackson.core.*;
+import tools.jackson.databind.*;
 import com.jwebmp.core.htmlbuilder.javascript.*;
-
-import java.io.*;
 
 /**
  * Deserializes a field returned in JSON as an object into a string
@@ -29,20 +27,20 @@ import java.io.*;
  * @since Nov 9, 2016
  */
 class ObjectToStringDeserialize
-		extends JsonDeserializer<Object>
+                extends ValueDeserializer<Object>
 {
-	/**
-	 * An instant to serialize everything as tostring
-	 */
-	public ObjectToStringDeserialize()
-	{
-		//No config needed
-	}
+        /**
+         * An instant to serialize everything as tostring
+         */
+        public ObjectToStringDeserialize()
+        {
+                //No config needed
+        }
 
-	@Override
-	public Object deserialize(JsonParser jp, DeserializationContext dc) throws IOException
-	{
-		JsonNode node = jp.readValueAsTree();
-		return new JavaScriptPart().objectAsString(node);
-	}
+        @Override
+        public Object deserialize(JsonParser jp, DeserializationContext dc)
+        {
+                JsonNode node = jp.readValueAsTree();
+                return new JavaScriptPart().objectAsString(node);
+        }
 }

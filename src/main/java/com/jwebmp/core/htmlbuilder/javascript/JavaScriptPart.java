@@ -20,10 +20,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectReader;
-import com.fasterxml.jackson.databind.ObjectWriter;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectReader;
+import tools.jackson.databind.ObjectWriter;
 import com.google.common.base.CaseFormat;
 import com.google.inject.Key;
 import com.google.inject.name.Names;
@@ -93,7 +93,7 @@ public class JavaScriptPart<J extends JavaScriptPart<J>>
             // Ensure compact JSON without pretty-print whitespace that can break strict substring checks in tests.
             try
             {
-                writer = writer.without(com.fasterxml.jackson.databind.SerializationFeature.INDENT_OUTPUT);
+                writer = writer.without(tools.jackson.databind.SerializationFeature.INDENT_OUTPUT);
             }
             catch (Throwable ignore)
             {
@@ -102,7 +102,7 @@ public class JavaScriptPart<J extends JavaScriptPart<J>>
             return writer.writeValueAsString(o)
                          .replace("\r\n", "\n");
         }
-        catch (JsonProcessingException ex)
+        catch (JacksonException ex)
         {
             JavaScriptPart.log.log(Level.FINER, "Unable to Serialize as JSON Json Processing Exception", ex);
             return "";
@@ -166,11 +166,11 @@ public class JavaScriptPart<J extends JavaScriptPart<J>>
                 {
                     s = getJavascriptObjectMapper().writeValueAsString(this);
                 }
-                catch (com.fasterxml.jackson.databind.JsonMappingException mapException)
+                catch (tools.jackson.databind.DatabindException mapException)
                 {
                     JavaScriptPart.log.log(Level.SEVERE, "JSON Mapping Exception!", mapException);
                 }
-                catch (JsonProcessingException ex)
+                catch (JacksonException ex)
                 {
                     JavaScriptPart.log.log(Level.SEVERE, "Error Writing as Javascript!", ex);
                 }
@@ -182,7 +182,7 @@ public class JavaScriptPart<J extends JavaScriptPart<J>>
                 {
                     s = getJsonObjectMapper().writeValueAsString(this);
                 }
-                catch (JsonProcessingException ex)
+                catch (JacksonException ex)
                 {
                     JavaScriptPart.log.log(Level.SEVERE, "Error Writing as JSON Data!", ex);
                 }
@@ -194,7 +194,7 @@ public class JavaScriptPart<J extends JavaScriptPart<J>>
                 {
                     s = getJavascriptObjectMapper().writeValueAsString(this);
                 }
-                catch (JsonProcessingException ex)
+                catch (JacksonException ex)
                 {
                     JavaScriptPart.log.log(Level.SEVERE, "Error Writing as Javascript Function!", ex);
                 }
@@ -206,7 +206,7 @@ public class JavaScriptPart<J extends JavaScriptPart<J>>
                 {
                     s = getJsonObjectMapper().writeValueAsString(this);
                 }
-                catch (JsonProcessingException ex)
+                catch (JacksonException ex)
                 {
                     JavaScriptPart.log.log(Level.SEVERE, "Error Writing as Default!", ex);
                 }
