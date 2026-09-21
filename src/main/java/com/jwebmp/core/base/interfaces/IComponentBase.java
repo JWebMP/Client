@@ -17,6 +17,7 @@
 package com.jwebmp.core.base.interfaces;
 
 import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
+import com.jwebmp.core.base.servlets.interfaces.IComponent;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -192,4 +193,14 @@ public interface IComponentBase<J extends IComponentBase<J>>
     boolean isStartOfRender();
 
     J setStartOfRender(boolean startOfRender);
+
+    /**
+     * Returns a component from a JSON string
+     * @param json
+     * @return
+     */
+    static IComponent<?> from(String json){
+
+        return null;
+    }
 }
