@@ -18,6 +18,9 @@ package com.jwebmp.core.base.interfaces;
 
 import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
 import com.jwebmp.core.base.servlets.interfaces.IComponent;
+import com.guicedee.modules.services.jsonrepresentation.IJsonRepresentation;
+import com.guicedee.modules.services.jsonrepresentation.JsonRenderException;
+import tools.jackson.databind.JsonNode;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -195,12 +198,47 @@ public interface IComponentBase<J extends IComponentBase<J>>
     J setStartOfRender(boolean startOfRender);
 
     /**
-     * Returns a component from a JSON string
-     * @param json
-     * @return
+     * Reconstructs the concrete component named by the {@code componentClass} property in a component JSON document.
+     *
+     * @param json the component JSON produced by {@code ComponentBase#toJson()}
+     * @return the reconstructed component
+     * @throws JsonRenderException if the document has no valid component class or cannot be deserialized
      */
-    static IComponent<?> from(String json){
+    static IComponent<?> from(String json)
+    {
+        try
+        {
+            JsonNode root = IJsonRepresentation.getObjectMapper()
+                                                .readTree(json);
+            JsonNode componentClass = root == null ? null : root.get("componentClass");
+            if (componentClass == null || !componentClass.isTextual())
+            {
+                throw new JsonRenderException("Component JSON must contain a textual componentClass property");
+            }
 
-        return null;
+            String className = componentClass.asText();
+            Class<?> type = Class.forName(className, false, componentClassLoader());
+            if (!IComponent.class.isAssignableFrom(type))
+            {
+                throw new JsonRenderException("Component class does not implement IComponent: " + className);
+            }
+
+            return (IComponent<?>) IJsonRepresentation.From(json, type.asSubclass(IComponent.class));
+        }
+        catch (JsonRenderException e)
+        {
+            throw e;
+        }
+        catch (Exception e)
+        {
+            throw new JsonRenderException("Unable to deserialize component JSON", e);
+        }
+    }
+
+    private static ClassLoader componentClassLoader()
+    {
+        ClassLoader contextClassLoader = Thread.currentThread()
+                                               .getContextClassLoader();
+        return contextClassLoader == null ? IComponentBase.class.getClassLoader() : contextClassLoader;
     }
 }
