@@ -53,10 +53,6 @@
             <artifactId>uadetector-resources</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>io.smallrye.reactive</groupId>
-            <artifactId>mutiny</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>com.jwebmp.core</groupId>
